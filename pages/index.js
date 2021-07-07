@@ -10,7 +10,7 @@ import Footer from '../component/Footer';
 import Articles from '../component/Articles';
 import { Parallax } from 'react-parallax';
 
-import Logo from '../public/img/logo.jpeg';
+import Logo from '../public/img/logo-transparent.png';
 import Russell from '../public/img/russell-martin.jpeg';
 import BookIcon from '../public/img/book-icon.png';
 import FilmIcon from '../public/img/film-icon.png'
@@ -66,7 +66,7 @@ export default function Home() {
                                 <Link href="/"><a className="button solid">Read More</a></Link>
                             </Col>
                             <Col md={5}>
-                                <div><Image src={Russell} alt="Russell Martin" /></div>
+                                <div className="flex-center"><Image src={Russell} alt="Russell Martin" /></div>
                                 {/* <img src="img/russell-martin.jpeg" alt="Russell Martin" /> */}
                             </Col>
                         </Row>
@@ -97,6 +97,19 @@ export default function Home() {
                     </Container>
                 </section>
                 <Articles />
+                <section className={styles.name}>
+                    <Container>
+                            <Row className="justify-content-center">
+                                <Col md={10}>
+                                    <div className={styles.name_box}>
+                                        <div className="flex-center"><Image src={Logo} alt="Say Yes Quickly Logo" width={114} height={114} /></div>
+                                        <p className="text-center">The name “Say Yes Quickly” comes from a poem by Jelaluddin Rumi, the great Sufi mystic who lived in the thirteenth century. The poem affirms that it’s possible to touch the lives of “people you don’t know and have never seen.” And we love to say yes quickly ourselves when we're entertained, moved, or impassioned by the creative work of others.<br/><br/>Russell and his colleagues at Say Yes Quickly can be reached by telephone at<br/>+1 818 601 4800 or by e-mail at russell [AT] sayyesquickly.net</p>
+                                        <div className="flex-center"><Link href="/"><a className="button solid mt-5">Read More</a></Link></div>
+                                    </div>
+                                </Col>
+                            </Row>
+                    </Container>
+                </section>
                 <section className={`${styles.quote} no-padding`}>
                     <Parallax bgImage="./img/point-lookout.jpeg" strength={240} renderLayer={percentage => ( <div data-percentage={percentage} /> )}>
                         <Container>

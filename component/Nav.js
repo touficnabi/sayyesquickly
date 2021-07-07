@@ -39,6 +39,7 @@ export default function Nav() {
     }, [])
     return(
         <header className={Styles.header}>
+            <a className="top" id="top"></a>
             <Navbar ref={navbar} className={`${Styles.navbar} p-0`}>
                 <Container className="justify-content-center">
                     <ul ref={nav1} className={`${Styles.main_nav} ${Styles.nav_1}`}>

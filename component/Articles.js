@@ -1,13 +1,19 @@
 import styles from '../styles/Articles.module.scss';
 import { Container, Row, Col } from 'react-bootstrap';
+import Image from 'next/image';
 import ArticleModal from './ArticleModal';
+
+import ArticleIcon from '../public/img/article-icon.png'
+
 const Articles = () => {
     return(
         <section className={styles.articles}>
             <Container>
                 <Row className="justify-content-center">
                     <Col md={10}>
-                        <Row>
+                        <div className="flex-center"><Image src={ArticleIcon} alt="Articles by Russell Martin" /></div>
+                        <h2 className="title mt-4">Articles</h2>
+                        <Row className="mt-5">
                             <Col md={4}>
                                 <div className={styles.article} style={{backgroundImage: "url('img/blog-post-1.jpeg')"}}>
                                     <div>

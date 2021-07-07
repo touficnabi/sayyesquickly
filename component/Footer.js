@@ -1,13 +1,21 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faInstagram, faTwitter, faMediumM, faVimeoV } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faInstagram, faTwitter, faMediumM, faVimeoV, faAngleDoubleUp } from "@fortawesome/free-brands-svg-icons";
 import styles from '../styles/Footer.module.scss';
 import Link from 'next/link'
 
 const Footer = () => {
+    const scrollToTop = () => {
+        window.scrollTo({
+          top: 0,
+          behavior: "smooth"
+        });
+    };
     return(
         <footer>
+            <FontAwesomeIcon icon="coffee" size="lg" />
+            <FontAwesomeIcon icon={faAngleDoubleUp} />
             <ul className={styles.footer_nav}>
-                <li>Who We Are</li>
+                <li onClick={scrollToTop}>Who We Are</li>
                 <li>Russell Martin</li>
                 <li>News</li>
                 <li>Books</li>
