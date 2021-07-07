@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 import Link from 'next/link';
+import Image from 'next/image';
 import Nav from '../component/Nav';
 import { Container, Row, Col } from 'react-bootstrap';
 import Hero from '../component/Hero';
@@ -8,6 +9,11 @@ import Vimeo from '../component/Vimeo';
 import Footer from '../component/Footer';
 import Articles from '../component/Articles';
 import { Parallax } from 'react-parallax';
+
+import Logo from '../public/img/logo.jpeg';
+import Russell from '../public/img/russell-martin.jpeg';
+import BookIcon from '../public/img/book-icon.png';
+import FilmIcon from '../public/img/film-icon.png'
 
 export default function Home() {
     return (
@@ -22,9 +28,9 @@ export default function Home() {
             <main className={styles.main}>
                 <Hero />
                 <section className={styles.about}>
-                    <img src="img/logo.jpeg" alt="" />
                     <Container>
                         <Row className="justify-content-center">
+                            <div className="flex-center"><Image className={styles.about_logo} src={Logo} alt="Say Yes Quickly Logo" /></div>
                             <Col lg={8}>
                                 <Row>
                                     <Col md={6} className={styles.has_right_border}>
@@ -60,7 +66,8 @@ export default function Home() {
                                 <Link href="/"><a className="button solid">Read More</a></Link>
                             </Col>
                             <Col md={5}>
-                                <img src="img/russell-martin.jpeg" alt="Russell Martin" />
+                                <div><Image src={Russell} alt="Russell Martin" /></div>
+                                {/* <img src="img/russell-martin.jpeg" alt="Russell Martin" /> */}
                             </Col>
                         </Row>
                     </Container>
@@ -70,7 +77,8 @@ export default function Home() {
                         <Row>
                             <Col md={6} className="text-center">
                                 <div className="w-50 m-auto">
-                                    <img src="/img/book-icon.png" alt="books by Russell Martin" />
+                                    {/* <img src="/img/book-icon.png" alt="books by Russell Martin" /> */}
+                                    <div><Image src={BookIcon} alt="books by Russell Martin" /></div>
                                     <h2 className="title mt-4">Books</h2>
                                     <p>For more than thirty years, Russell Martin has published novels and nonfiction books that have been widely acclaimed in the United States and around the world—books noted for their analysis, discipline, vivid storytelling, and poetic sensibilities.</p>
                                     <Link href="/"><a className="button transparent mt-5">Read More</a></Link>
@@ -78,7 +86,8 @@ export default function Home() {
                             </Col>
                             <Col md={6} className="text-center">
                                 <div className="w-50 m-auto">
-                                    <img src="/img/film-icon.png" alt="Films by Russell Martin" />
+                                    {/* <img src="/img/film-icon.png" alt="Films by Russell Martin" /> */}
+                                    <div><Image src={FilmIcon} alt="Films by Russell Martin" /></div>
                                     <h2 className="title mt-4">Films</h2>
                                     <p>Russell Martin’s award-winning documentary films have been screened at film festivals and broadcast on television in numerous countries around the world—films that educate, inspire, and move viewers to action.</p>
                                     <Link href="/"><a className="button transparent mt-5">Read More</a></Link>

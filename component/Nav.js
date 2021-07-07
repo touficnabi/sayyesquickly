@@ -2,6 +2,8 @@ import { useEffect, useRef } from 'react';
 import Styles from '../styles/Nav.module.scss';
 import {Navbar, Container} from 'react-bootstrap';
 import gsap from 'gsap';
+import Image from 'next/image';
+import Logo from '../public/img/logo.jpeg';
 
 export default function Nav() {
     const logoImg = useRef(null);
@@ -44,7 +46,8 @@ export default function Nav() {
                         <li className={Styles.nav_item}>Who We Are</li>
                         <li className={Styles.nav_item}>Russell Martin</li>
                     </ul>
-                    <img ref={logoImg} src="img/logo.jpeg" alt="Say Yes Quickly Logo" className={`${Styles.logo} logo`} />
+                    <div ref={logoImg} className={`${Styles.logo} logo`}><Image src={Logo} alt="Say Yes Quickly Logo" /></div>
+                    {/* <img ref={logoImg} src="img/logo.jpeg" alt="Say Yes Quickly Logo" className={`${Styles.logo} logo`} /> */}
                     <ul ref={nav2} className={`${Styles.main_nav} ${Styles.nav_2}`}>
                         <li className={Styles.nav_item}>News</li>
                         <li className={Styles.nav_item}>Books</li>
