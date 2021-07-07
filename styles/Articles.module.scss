@@ -1,0 +1,16 @@
+.articles{
+    .article{
+        display: flex;
+        flex-direction: column;
+        height: 350px;
+        background: transparent no-repeat center center /cover;
+        padding: 30px 20px;
+        justify-content: space-between;
+    }
+
+    .center_btn{
+        margin: 40px auto 0;
+        display: flex;
+        justify-content: center;
+    }
+}

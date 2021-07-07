@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;800&display=swap');
+@import '_variables.scss';
+@import '_reset.scss';
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Raleway', sans-serif !important;
+    line-height: 1.6;
+    background-color: $green !important;
+    font-size: 16px;
+  
+    p{
+        font-size: 13px;
+        letter-spacing: 2px;
+        margin-bottom: 0;
+        color: $beige;
+        line-height: 22px;
+    }
+    h1, h2, h3{ font-weight: 800; color: $beige }
+    h5{ font-size: 1.878rem; line-height: 1.6; color: $beige; letter-spacing: 2px;}
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #EA4B35;
+    height: 100px;
+}
+
+::-webkit-scrollbar {
+    background: rgba(63, 63, 63, 0.1);
+    overflow: visible;
+    width: 8px;
+}
+
+a{
+    color: inherit;
+    text-decoration: underline;
+    transition: all .5s ease;
+    
+    &:hover{
+        text-decoration: underline;
+        opacity: .6;
+    }
+  
+    &.button{
+        background-color: $red ;
+        color: $beige;
+        padding: 13px 45px;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover{
+              background-color: $red;
+              color: $beige;
+        }
+
+        &.solid{
+            color: $red;
+            background-color: $beige;
+            opacity: 1;
+
+            &:hover{
+                background-color: $red;
+                color: $beige;
+                opacity: 1;
+            }
+
+            &.alt-green{
+                &:hover{
+                    background-color: $green;
+                    color: $beige;
+                    opacity: 1;
+                }
+            }
+        }
+
+        &.transparent{
+            color: $beige;
+            border: 2px solid $beige;
+            background-color: transparent;
+
+            &:hover{
+                background-color: $beige;
+                color: $red;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.center_items{
+    display: flex;
+    align-items: center;
+    justify-content: center ;
+}
+
+section, .section{
+    padding: $sectionGap 0;
+    width: 100%;
+
+    &.no-padding{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    .react-parallax {
+        .react-parallax-bgimage{
+            + div{
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0;
+                background: transparentize($green, .6);
+            }
+        }
+        .react-parallax-content{
+            padding: $sectionGap 0;
+        }
+    }
+}
+
+h1{
+    font-size: 3.8em !important;
+    font-weight: 800 !important;
+    color: $beige;
+    &.title{
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 50px;
+    }
+}
+
+h2{
+    font-size: 2.8em !important;
+    font-weight: 800 !important;
+    color: $beige;
+    &.title{
+        text-align: center;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+    }
+}
