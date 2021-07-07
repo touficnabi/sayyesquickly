@@ -103,7 +103,7 @@ export default function Home() {
                                 <Col md={10}>
                                     <div className={styles.name_box}>
                                         <div className="flex-center"><Image src={Logo} alt="Say Yes Quickly Logo" width={114} height={114} /></div>
-                                        <p className="text-center">The name “Say Yes Quickly” comes from a poem by Jelaluddin Rumi, the great Sufi mystic who lived in the thirteenth century. The poem affirms that it’s possible to touch the lives of “people you don’t know and have never seen.” And we love to say yes quickly ourselves when we're entertained, moved, or impassioned by the creative work of others.<br/><br/>Russell and his colleagues at Say Yes Quickly can be reached by telephone at<br/>+1 818 601 4800 or by e-mail at russell [AT] sayyesquickly.net</p>
+                                        <p className="text-center">The name “Say Yes Quickly” comes from a poem by Jelaluddin Rumi, the great Sufi mystic who lived in the thirteenth century. The poem affirms that it’s possible to touch the lives of “people you don’t know and have never seen.” And we love to say yes quickly ourselves when we&apos;re entertained, moved, or impassioned by the creative work of others.<br /><br />Russell and his colleagues at Say Yes Quickly can be reached by telephone at<br />+1 818 601 4800 or by e-mail at russell [AT] sayyesquickly.net</p>
                                         <div className="flex-center"><Link href="/"><a className="button solid mt-5">Read More</a></Link></div>
                                     </div>
                                 </Col>
