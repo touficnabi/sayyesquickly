@@ -1,5 +1,27 @@
 @import '_variables.scss';
 
+.scroll_to_top {
+    position: absolute;
+    top: 0;
+    color: $green;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    &:hover{
+        opacity: 1;
+        color: $green;
+    }
+
+    svg{
+        width: 45px;
+        height: 45px;
+        background-color: $beige;
+        padding: 15px;
+        border-radius: 30px;
+    }
+}
+
 .footer_nav{
     display: flex;
     padding: 0;

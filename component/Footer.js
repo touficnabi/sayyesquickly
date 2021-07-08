@@ -1,5 +1,6 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebookF, faInstagram, faTwitter, faMediumM, faVimeoV, faAngleDoubleUp } from "@fortawesome/free-brands-svg-icons";
+import { faFacebookF, faInstagram, faTwitter, faMediumM, faVimeoV } from "@fortawesome/free-brands-svg-icons";
+import { faAngleDoubleUp } from '@fortawesome/free-solid-svg-icons';
 import styles from '../styles/Footer.module.scss';
 import Link from 'next/link'
 
@@ -11,11 +12,10 @@ const Footer = () => {
         });
     };
     return(
-        <footer>
-            <FontAwesomeIcon icon="coffee" size="lg" />
-            <FontAwesomeIcon icon={faAngleDoubleUp} />
+        <footer>    
+            <a onClick={scrollToTop} className={styles.scroll_to_top}><FontAwesomeIcon icon={faAngleDoubleUp} /></a>
             <ul className={styles.footer_nav}>
-                <li onClick={scrollToTop}>Who We Are</li>
+                <li>Who We Are</li>
                 <li>Russell Martin</li>
                 <li>News</li>
                 <li>Books</li>
