@@ -14,6 +14,7 @@ import Logo from '../public/img/logo-transparent.png';
 import Russell from '../public/img/russell-martin.jpeg';
 import BookIcon from '../public/img/book-icon.png';
 import FilmIcon from '../public/img/film-icon.png'
+import VSlider from '../component/VSlider';
 
 export default function Home() {
     return (
@@ -51,8 +52,8 @@ export default function Home() {
                     <Container>
                         <Row className="justify-content-center">
                             <Col lg={6}>
-                                <h1 className="title">Beautiful Faces</h1>
-                                <Vimeo videoID={49933571} />
+                                {/* <h1 className="title">Beautiful Faces</h1> */}
+                                {/* <Vimeo /> */} <VSlider />
                             </Col>
                         </Row>
                     </Container>
