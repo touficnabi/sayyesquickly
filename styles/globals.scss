@@ -10,6 +10,7 @@ body {
     line-height: 1.6;
     background-color: $green !important;
     font-size: 16px;
+    overflow-x: hidden;
   
     p{
         font-size: 13px;
@@ -158,14 +159,29 @@ h2{
 }
 
 
-//slick slider style
-.slick-list{
-    padding-left: 0 !important;
-    padding-right: 0 !important;
+.btn {
+    position: absolute;
+    top: 100%;
+    transform: translateY(-50%);
+    outline: none !important;
+    padding: 0 !important;
+    border: none !important;
 
-    .slick-slide{
-        // margin: 0 40px;
-        opacity: 0;
+    svg{
+        width: 45px;
+        height: 45px;
+        border-radius: 30px !important;
+        background: $beige !important;
+        color: $green !important;
+        padding: 15px;
+    }
+    
+    &.leftBtn{
+        left: -20%;
+    }
+
+    &.rightBtn{
+        right: -20%;
     }
 }
 

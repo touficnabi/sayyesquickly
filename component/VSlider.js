@@ -1,5 +1,7 @@
 import gsap from "gsap";
 import { useEffect, useRef, useState } from "react";
+import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const VSlider = () => {
 
@@ -12,22 +14,22 @@ const VSlider = () => {
         setBfActive(prevState => !prevState);
                 
         if (bfActive){
-            gsap.to(slide1.current, {x: -500, alpha: 0, display: 'none'})
-            gsap.fromTo(slide2.current, {x: 500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
+            gsap.to(slide1.current, {x: 500, alpha: 0, display: 'none'})
+            gsap.fromTo(slide2.current, {x: -500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
         } else {
-            gsap.to(slide2.current, {x: -500, alpha: 0, display: 'none'})
-            gsap.fromTo(slide1.current, {x: 500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
+            gsap.to(slide2.current, {x: 500, alpha: 0, display: 'none'})
+            gsap.fromTo(slide1.current, {x: -500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
         }
     }
     const slideRight = () => {
         setBfActive(prevState => !prevState);
 
         if (bfActive){
-            gsap.to(slide1.current, {x: 500, alpha: 0, display: 'none'})
-            gsap.fromTo(slide2.current, {x: -500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
+            gsap.to(slide1.current, {x: -500, alpha: 0, display: 'none'})
+            gsap.fromTo(slide2.current, {x: 500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
         } else {
-            gsap.to(slide2.current, {x: 500, alpha: 0, display: 'none'})
-            gsap.fromTo(slide1.current, {x: -500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
+            gsap.to(slide2.current, {x: -500, alpha: 0, display: 'none'})
+            gsap.fromTo(slide1.current, {x: 500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
         }
     }
 
@@ -37,7 +39,8 @@ const VSlider = () => {
     return(
         <>        
             <div className="slider" style={{width: '100%', paddingBottom: '50%'}}>
-                <button style={{position: 'absolute', left: '-20%', top: '100%', transform: 'translateY(-50%)'}} onClick={slideLeft}>Prev</button><button style={{position: 'absolute', right: '-20%', top: '100%', transform: 'translateY(-50%)'}} onClick={slideRight}>Next</button>
+                <button className="btn leftBtn" onClick={slideLeft}><FontAwesomeIcon icon={faAngleDoubleLeft} /></button>
+                <button className="btn rightBtn" onClick={slideRight}><FontAwesomeIcon icon={faAngleDoubleRight} /></button>
                 <div ref={slide1} className={bfActive ? 'slide active': 'slide'}>
                     <h1 className="title">Beautiful Faces</h1>
                     <div style={{padding:'56.25% 0 0 0',position:'relative', marginBottom: '-0%'}}>
