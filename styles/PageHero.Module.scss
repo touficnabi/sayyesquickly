@@ -1,0 +1,44 @@
+@import '_variables.scss';
+
+.pageHero{
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1{
+        margin-bottom: 0 !important;
+    }
+
+}
+.scrollToBelowHero{
+    position: absolute;
+    // bottom: 0;
+    color: $green;
+    cursor: pointer;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $beige;
+    border-radius: 30px;
+
+    svg{
+        width: 45px;
+        height: 45px;
+        padding: 15px;
+    }
+
+    &:hover{
+        opacity: 1;
+        background-color: $red;
+        color: $beige;
+    }
+}
+
+.bottom{
+    position: relative;
+    top: -79px;
+}

@@ -4,6 +4,7 @@ import {Navbar, Container} from 'react-bootstrap';
 import gsap from 'gsap';
 import Image from 'next/image';
 import Logo from '../public/img/logo.jpeg';
+import Link from 'next/link';
 
 export default function Nav() {
     const logoImg = useRef(null);
@@ -43,11 +44,11 @@ export default function Nav() {
             <Navbar ref={navbar} className={`${Styles.navbar} p-0`}>
                 <Container className="justify-content-center">
                     <ul ref={nav1} className={`${Styles.main_nav} ${Styles.nav_1}`}>
-                        <li className={Styles.nav_item}>Home</li>
-                        <li className={Styles.nav_item}>Who We Are</li>
+                        <li className={Styles.nav_item}><Link href="/">Home</Link></li>
+                        <li className={Styles.nav_item}><Link href="/who-we-are">Who We Are</Link></li>
                         <li className={Styles.nav_item}>Russell Martin</li>
                     </ul>
-                    <div ref={logoImg} className={`${Styles.logo} logo`}><Image src={Logo} alt="Say Yes Quickly Logo" /></div>
+                    <div ref={logoImg} className={`${Styles.logo} logo`}><Image src={Logo} alt="Say Yes Quickly Logo" styles={{borderBottomRightRadius: '4px', borderBottomLeftRadius: '4px'}} /></div>
                     {/* <img ref={logoImg} src="img/logo.jpeg" alt="Say Yes Quickly Logo" className={`${Styles.logo} logo`} /> */}
                     <ul ref={nav2} className={`${Styles.main_nav} ${Styles.nav_2}`}>
                         <li className={Styles.nav_item}>News</li>

@@ -11,6 +11,7 @@ body {
     background-color: $green !important;
     font-size: 16px;
     overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
   
     p{
         font-size: 13px;
@@ -20,7 +21,7 @@ body {
         line-height: 22px;
     }
     h1, h2, h3{ font-weight: 800; color: $beige }
-    h5{ font-size: 1.878rem; line-height: 1.6; color: $beige; letter-spacing: 2px;}
+    h5{ font-size: 1.3rem /*1.878rem*/; line-height: 1.6; color: $beige; letter-spacing: 2px;}
 }
 
 ::-webkit-scrollbar-thumb {
