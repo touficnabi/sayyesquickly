@@ -41,6 +41,15 @@
 
             .portfolio__info{
                 text-align: right;
+
+                .portfolio__description{
+                    margin: 30px 25px 0 0;
+                    padding-right: 25px;
+                    padding-bottom: 30px;
+                    border-right: 1px solid $beige;
+                    padding-left: unset;
+                    border-left: 0;
+                }
             }
         }
     }

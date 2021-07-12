@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const PortfolioItem = ({reversed, image, title, description, link, buttonText}) => {
     return (
-        <div className={ reversed ? `${styles.portfolio} reversed` : styles.portfolio}>
+        <div className={ reversed ? `${styles.portfolio} ${styles.reversed}` : styles.portfolio}>
             <Container>
                 <Row className="justify-content-center">
                     <Col md={9}>
