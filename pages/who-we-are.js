@@ -3,7 +3,6 @@ import PageHero from "../component/PageHero";
 import HeroImage from '../public/img/who-we-are-hero.jpeg';
 import { Container, Row, Col } from "react-bootstrap";
 import styles from '../styles/WhoWeAre.module.scss';
-// import styles from '../styles/Home.module.scss';
 import PortfolioItem from "../component/PortfolioItem";
 import BfPoster from '../public/img/beautiful-face-poster.jpeg';
 import picasso from '../public/img/picassos-war.jpeg';
