@@ -1,4 +1,3 @@
-import Vimeo from "../component/Vimeo";
 import VSlider from "../component/VSlider";
 import { Container, Row, Col } from "react-bootstrap";
 const About = () => {
