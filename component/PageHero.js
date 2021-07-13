@@ -1,4 +1,4 @@
-import styles from '../styles/Pagehero.module.scss';
+import styles from '../styles/PageHero.module.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';

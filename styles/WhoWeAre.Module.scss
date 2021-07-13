@@ -1,10 +1,113 @@
-@import './variables';
+@import '_variables.scss';
 
-.who_we_are{
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    align-items: center;
+}
+
+.about{
     background-color: $red;
+    width: 100%;
+    padding: $sectionGap 0;
+    color: $beige;
+    
+    .aboout_logo{
+        display: flex;
+        width: auto;
+        margin: 0 auto 60px;
+    }
+    
+    .has_right_border{
+        @media screen and (min-width: 768px) {
+            padding-bottom: 20px;
+            border-right: 1px solid $beige;
+        }
+        padding-top: 20px;
+        padding-bottom: inherit;
+        + div{
+            @media screen and (min-width: 768px){
+                padding-top: 20px;
+            }
+            padding-bottom: 20px;
+            padding-top: inherit;
+        }
+    }
+}
+
+.video{
+    background: url('../public/img/desert-spring.jpeg') center center no-repeat;
+    background-size: cover;
+    width: 100%;
+    padding: $sectionGap 0 0;
+    position: relative;
+    z-index: 0;
+  
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: transparentize($green, .2);
+        z-index: -1;
+    }
 }
 
 .russell{
+    padding-top: 270px;
+    &_about{
+        @media screen and (min-width: 768px) {
+            padding: 6px 40px 40px; 
+            border-left: 1px solid $beige;
+            padding-left: 28px;
+            margin-left: 8px;
+        }
+    }
+}
+
+.books_films{
+    background: url('../public/img/books-films-bg.jpeg') no-repeat center center /cover;  
+    position: relative;
+    z-index: 0;
+  
+    &::before{
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background: transparentize($black, .6);
+        z-index: -1;
+    }
+}
+
+.name{
+    padding-top: 0;
+
+    &_box{
+        border: 2px solid $beige;
+        padding: 40px;
+        padding-bottom: 0;
+
+        p{
+            font-size: 1.25em;
+            line-height: 1.5;
+            margin-top: 40px;
+        }
+
+        a{
+            margin-bottom: -22.5px;
+        }
+    }
+}
+
+.quote{
     position: relative;
     z-index: 0;
 
@@ -17,15 +120,5 @@
         left: 0;
         background: transparentize($green, .6);
         z-index: -1;
-    }
-
-    .russell_box{
-        border: 2px solid $beige;
-        padding: 40px;
-        padding-bottom: 0;
-
-        a{
-            margin-bottom: -22.5px;
-        }
     }
 }
