@@ -1,5 +1,4 @@
 import Head from "next/head";
-import Nav from "../component/Nav";
 import PageHero from "../component/PageHero";
 import HeroImage from '../public/img/who-we-are-hero.jpeg';
 import { Container, Row, Col } from "react-bootstrap";
@@ -8,6 +7,7 @@ import PortfolioItem from "../component/PortfolioItem";
 import BfPoster from '../public/img/beautiful-face-poster.jpeg';
 import picasso from '../public/img/picassos-war.jpeg';
 import { Parallax } from "react-parallax";
+import Link from "next/link";
 
 const WhoWeAre = () => {
     return (
@@ -17,7 +17,7 @@ const WhoWeAre = () => {
                 <meta name="description" content="This is the index or home page of the Say Yes Quickly Productions website." />
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-            <Nav />
+
             <main>
                 <PageHero text="Who We Are" image={HeroImage} />
                 <section className={styles.who_we_are}>
@@ -44,6 +44,9 @@ const WhoWeAre = () => {
                             <Col md={9}>
                                 <div className={styles.russell_box}>
                                     <h5 className="text-center">Russell Martin is known for synthesizing the historic and contemporary elements of filmed and written stories, grounding narrative in careful research, and making complex ideas readily comprehensible and deeply humane.</h5>
+                                    <div className="flex-center">
+                                        <Link href="/news"><a className="button solid mt-4">News</a></Link>
+                                    </div>
                                 </div>
                             </Col>
                         </Row>

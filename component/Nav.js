@@ -46,14 +46,14 @@ export default function Nav() {
                     <ul ref={nav1} className={`${Styles.main_nav} ${Styles.nav_1}`}>
                         <li className={Styles.nav_item}><Link href="/">Home</Link></li>
                         <li className={Styles.nav_item}><Link href="/who-we-are">Who We Are</Link></li>
-                        <li className={Styles.nav_item}>Russell Martin</li>
+                        <li className={Styles.nav_item}><Link href="/russell-martin">Russell Martin</Link></li>
                     </ul>
                     <div ref={logoImg} className={`${Styles.logo} logo`}><Image src={Logo} alt="Say Yes Quickly Logo" styles={{borderBottomRightRadius: '4px', borderBottomLeftRadius: '4px'}} /></div>
                     {/* <img ref={logoImg} src="img/logo.jpeg" alt="Say Yes Quickly Logo" className={`${Styles.logo} logo`} /> */}
                     <ul ref={nav2} className={`${Styles.main_nav} ${Styles.nav_2}`}>
-                        <li className={Styles.nav_item}>News</li>
-                        <li className={Styles.nav_item}>Books</li>
-                        <li className={Styles.nav_item}>Films</li>
+                        <li className={Styles.nav_item}><Link href="/news">News</Link></li>
+                        <li className={Styles.nav_item}><Link href="/books">Books</Link></li>
+                        <li className={Styles.nav_item}><Link href="/films">Films</Link></li>
                         <li className={Styles.nav_item}>Articles</li>
                     </ul>
                 </Container>

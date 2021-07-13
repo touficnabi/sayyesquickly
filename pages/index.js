@@ -2,10 +2,8 @@ import Head from 'next/head';
 import styles from '../styles/Home.module.scss';
 import Link from 'next/link';
 import Image from 'next/image';
-import Nav from '../component/Nav';
 import { Container, Row, Col } from 'react-bootstrap';
 import Hero from '../component/Hero';
-import Footer from '../component/Footer';
 import Articles from '../component/Articles';
 import { Parallax } from 'react-parallax';
 
@@ -24,7 +22,6 @@ export default function Home() {
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Nav />
             <main className={styles.main}>
                 <Hero />
                 <section className={styles.about}>
@@ -121,10 +118,6 @@ export default function Home() {
                     </Parallax>
                 </section>
             </main>
-
-            <section className={styles.footer}>
-                <Footer />
-            </section>
         </>
     )
 }
