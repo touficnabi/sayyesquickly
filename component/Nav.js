@@ -54,7 +54,7 @@ export default function Nav() {
                         <li className={Styles.nav_item}><Link href="/news">News</Link></li>
                         <li className={Styles.nav_item}><Link href="/books">Books</Link></li>
                         <li className={Styles.nav_item}><Link href="/films">Films</Link></li>
-                        <li className={Styles.nav_item}>Articles</li>
+                        <li className={Styles.nav_item}><Link href="/#">Articles</Link></li>
                     </ul>
                 </Container>
             </Navbar>

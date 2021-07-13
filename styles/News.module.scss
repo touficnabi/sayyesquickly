@@ -1,0 +1,27 @@
+@import 'variables';
+
+.news_item{
+    padding-bottom: 50px;
+    border-bottom: 1px solid $beige;
+
+    margin: 50px 0;
+
+    &:first-of-type{ margin-top: 0; }
+    &:last-of-type{ margin-bottom: 0; }
+
+    .news_title{
+        text-transform: uppercase;
+        color:$red;
+        font-size: 30px;
+        font-weight: 800;
+        margin-bottom: 40px;
+    }
+
+    .news_description{
+        .news_external_link a{
+            color: $red;
+            font-weight: 800;
+        }
+    }
+
+}

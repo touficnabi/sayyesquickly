@@ -9,7 +9,7 @@ const PageHero = ({text, image}) => {
     const bottom = useRef(null)
 
     const scrollDown = () => {
-        bottom.current.scrollIntoView();
+        bottom.current.scrollIntoView({behavior: 'smooth'});
     }
 
     return(

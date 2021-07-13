@@ -40,9 +40,10 @@
     border-radius: 30px;
 
     svg{
-        width: 45px;
-        height: 45px;
+        width: 45px !important;
+        height: 45px !important;
         padding: 15px;
+        display: flex;
     }
 
     &:hover{
