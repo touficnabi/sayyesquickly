@@ -35,12 +35,12 @@ const WhoWeAre = () => {
                 <section>
                     <PortfolioItem image={BfPoster} >
                         <h4>&quot;A splendid documentary,&quot; writes Federico Reyes Heroles in Reforma.</h4>
-                        <p>A compelling new film about a Mexico City hospital where young lives are transformed. Beautiful Faces is an intimate portrait of one of the world&apos;s most remarkable clinics, the disfigured young patients to whom it offers new lives, and the team of surgeons, physicians, and medical professionals who believe it’s the best place in the world to practice their unique, life-transforming craft. Beautiful Faces is a film that’s at once moving and inspiring, informative and challenging, a story that’s told with narrative power and visual eloquence.</p>
+                        <p>A compelling new film about a Mexico City hospital where young lives are transformed. Beautiful Faces is an intimate portrait of one of the world&apos;s most remarkable clinics, the disfigured young patients to whom it offers new lives, and the team of surgeons, physicians, and medical professionals who believe it&apos;s the best place in the world to practice their unique, life-transforming craft. Beautiful Faces is a film that&apos;s at once moving and inspiring, informative and challenging, a story that&apos;s told with narrative power and visual eloquence.</p>
                         <Link href="/news"><a className="button solid">Read More</a></Link>
                     </PortfolioItem>
                     <PortfolioItem image={picasso} reversed>
                         <h4>The Destruction of Guernica, And The Masterpiece That Changed the World.</h4>
-                        <p>"Imaginative cultural historian Martin crafts a well-integrated and fascinating account of Picasso's famous painting and the horrible events that inspired it. The Author's signature approach to seemingly offbeat subjects is careful research filtered through a novelistic sensibility to grasp the inherent story, which he unfolds in the engaging, almost offhand manner of a fictional amateur sleuth.<br />--Kirkus Reviews</p>
+                        <p>&quot;Imaginative cultural historian Martin crafts a well-integrated and fascinating account of Picasso&apos;s famous painting and the horrible events that inspired it. The Author&apos;s signature approach to seemingly offbeat subjects is careful research filtered through a novelistic sensibility to grasp the inherent story, which he unfolds in the engaging, almost offhand manner of a fictional amateur sleuth.<br />--Kirkus Reviews</p>
                         <Link href="/news"><a className="button solid">Read More</a></Link>
                     </PortfolioItem>
                 </section>
