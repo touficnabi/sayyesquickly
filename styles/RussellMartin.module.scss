@@ -1,0 +1,26 @@
+@import 'variables';
+
+.russell{
+    background: $red;
+    .about_russell{
+        display: flex;
+        
+    
+        span{
+            position: relative;
+            flex-basis: 45%;
+            display: inline-flex;
+            align-items: flex-start;
+            height: 100%;
+            
+            &:before{
+                content: attr(data-name);
+                position: absolute;
+            }
+        }
+    
+        p{
+            flex-basis: 55%;
+        }
+    }
+}

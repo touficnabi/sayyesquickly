@@ -3,20 +3,43 @@ import styles from '../styles/PortfolioItem.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 
-const PortfolioItem = ({reversed, image, title, description, link, buttonText}) => {
+const PortfolioItem = ({reversed, book, name, image, children}) => {
+
+    if (book){
+        return(
+            <div className={ reversed ? `${styles.portfolio} ${styles.reversed}` : styles.portfolio} style={book? {padding: '100px 0', margin : '0'} : ''} >
+                <Container fluid className={styles.book}>
+                    <Row className="justify-content-center">
+                        <Col md={10}>
+                            <div className={styles.wrapper}>
+                                <div className={styles.portfolio__image}>
+                                    <div>
+                                        <Image src={image} alt={name} />
+                                        <div className={styles.book_name}><p>{name}</p></div>
+                                    </div>
+                                </div>
+                                <div className={styles.portfolio__info}>
+                                    {children}
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+        )
+    }
+
     return (
         <div className={ reversed ? `${styles.portfolio} ${styles.reversed}` : styles.portfolio}>
             <Container>
                 <Row className="justify-content-center">
-                    <Col md={9}>
+                    <Col md={10}>
                         <div className={styles.wrapper}>
                             <div className={styles.portfolio__image}>
-                                <Image src={image} />
+                                <Image src={image} alt={children[0].props.children} />
                             </div>
                             <div className={styles.portfolio__info}>
-                                <h4 className={styles.portfolio__title}>{title}</h4>
-                                <p className={styles.portfolio__description}>{description}</p>
-                                <Link href={link}><a className="button solid">{buttonText}</a></Link>
+                                {children}
                             </div>
                         </div>
                     </Col>
