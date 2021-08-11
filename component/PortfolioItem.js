@@ -1,7 +1,7 @@
 import { Container, Row, Col } from "react-bootstrap";
 import styles from '../styles/PortfolioItem.module.scss';
 import Image from 'next/image';
-import Link from 'next/link';
+// import Link from 'next/link';
 
 const PortfolioItem = ({reversed, book, name, image, children}) => {
 
