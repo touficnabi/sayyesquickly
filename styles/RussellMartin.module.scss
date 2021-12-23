@@ -24,3 +24,24 @@
         }
     }
 }
+
+.ribbon {
+    .buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+    }
+}
+
+.russell_info {
+    .russell_box {
+        border: 2px solid #ffffeb;
+        padding: 40px;
+        padding-bottom: 0;
+
+        a {
+            margin-bottom: -22.5px;
+        }
+    }
+}

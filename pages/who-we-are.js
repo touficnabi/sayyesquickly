@@ -46,20 +46,20 @@ const WhoWeAre = () => {
                 </section>
 
                 <section className={`${styles.russell} no-padding`}>
-                <Parallax bgImage="./img/ute-mountain.jpeg" strength={240} renderLayer={percentage => ( <div data-percentage={percentage} /> )}>
-                    <Container>
-                        <Row className="justify-content-center">
-                            <Col md={9}>
-                                <div className={styles.russell_box}>
-                                    <h5 className="text-center">Russell Martin is known for synthesizing the historic and contemporary elements of filmed and written stories, grounding narrative in careful research, and making complex ideas readily comprehensible and deeply humane.</h5>
-                                    <div className="flex-center">
-                                        <Link href="/news"><a className="button solid mt-4">News</a></Link>
+                    <Parallax bgImage="./img/ute-mountain.jpeg" strength={240} renderLayer={percentage => ( <div data-percentage={percentage} /> )}>
+                        <Container>
+                            <Row className="justify-content-center">
+                                <Col md={9}>
+                                    <div className={styles.russell_box}>
+                                        <h5 className="text-center">Russell Martin is known for synthesizing the historic and contemporary elements of filmed and written stories, grounding narrative in careful research, and making complex ideas readily comprehensible and deeply humane.</h5>
+                                        <div className="flex-center">
+                                            <Link href="/news"><a className="button solid mt-4">News</a></Link>
+                                        </div>
                                     </div>
-                                </div>
-                            </Col>
-                        </Row>
-                    </Container>
-                </Parallax>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Parallax>
                 </section>
             </main>
         </>

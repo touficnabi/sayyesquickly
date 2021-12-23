@@ -3,7 +3,9 @@ import Desert from '../public/img/desert-sunset.jpeg';
 import { Col, Container, Row } from "react-bootstrap";
 import styles from '../styles/RussellMartin.module.scss';
 import Image from "next/image";
+import Link from 'next/link';
 import russell from "../public/img/russell-martin.jpeg";
+import { Parallax } from "react-parallax";
 
 const RussellMartin = () => {
     return(
@@ -29,6 +31,40 @@ const RussellMartin = () => {
                             </Col>
                         </Row>
                     </Container>
+                </section>
+                <section className={styles.ribbon}>
+                    <Container>
+                        <Row>
+                            <Col className={styles.buttons}>
+                                <Link href="/"><a className="button solid">Books by Russell Martin</a></Link>
+                                <Link href="/"><a className="button solid">Films by Russell Martin</a></Link>
+                            </Col>
+                        </Row>
+                    </Container>
+                </section>
+                <section className={`${styles.russell_info} no-padding`}>
+                    <Parallax bgImage="./img/san-miguels.jpeg" strength={240} renderLayer={percentage => ( <div data-percentage={percentage} /> )}>
+                        <Container>
+                            <Row className="justify-content-center">
+                                <Col md={9}>
+                                    <div className={styles.russell_box}>
+                                        <h5 className="text-center">
+                                            Russell Martin is also a nationally and internationally bestselling ghostwriter who has worked for many years in collaboration with distinguished authors to create books that are powerful, persuasive, and critically as well as commercially successful. He is known for his professionalism, collegiality, and unique ability to accurately and engagingly approximate the author&apos;s own voice to tell stories and present information and ideas in highly compelling ways.
+                                            <br/>
+                                            <br/>
+                                            He can consider ghostwriting collaborations with authors writing in English to create autobiographies, company histories, memoirs, self-help books, opinion pieces, and general fiction or nonfiction books.
+                                            <br/>
+                                            <br/>
+                                            He can be contacted at russell AT sayyesquickly.net or at +1 818 601 4800.
+                                        </h5>
+                                        <div className="flex-center">
+                                            <Link href="/news"><a className="button solid mt-4">News</a></Link>
+                                        </div>
+                                    </div>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Parallax>
                 </section>
             </main>
         </>
