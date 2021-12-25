@@ -22,17 +22,19 @@
     }
     
     .has_right_border{
-        @media screen and (min-width: 768px) {
+        //@media screen and (min-width: 768px) {
+        @include desktop-only{
             padding-bottom: 20px;
             border-right: 1px solid $beige;
         }
-        padding-top: 20px;
-        padding-bottom: inherit;
+        padding-top: 40px;
+        padding-bottom: 20px;
         + div{
-            @media screen and (min-width: 768px){
+            //@media screen and (min-width: 768px){
+            @include desktop-only {
                 padding-top: 20px;
             }
-            padding-bottom: 20px;
+            padding-bottom: 40px;
             padding-top: inherit;
         }
     }
@@ -61,12 +63,14 @@
 .russell{
     padding-top: 270px;
     &_about{
-        @media screen and (min-width: 768px) {
+        //@media screen and (min-width: 768px) {
+        @include desktop-only{
             padding: 6px 40px 40px; 
             border-left: 1px solid $beige;
             padding-left: 28px;
             margin-left: 8px;
         }
+        padding: 20px 0 30px;
     }
 }
 
@@ -84,6 +88,39 @@
         left: 0;
         background: transparentize($black, .6);
         z-index: -1;
+    }
+
+    .half{
+        padding: 100px 0;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        background: url('../public/img/films.jpeg') no-repeat center center /cover;
+        position: relative;
+        @include tablet {justify-content: center;}
+
+        &::before{
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            background: transparentize($black, .6);
+        }
+
+        &:first-child {
+            background: url('../public/img/books.jpeg') no-repeat center center /cover;
+            @include desktop-only {
+                justify-content: flex-end;
+            }
+        }
+
+        > div {
+            max-width: 660px;
+            padding: 0 20px;
+            z-index: 1;
+        }
     }
 }
 

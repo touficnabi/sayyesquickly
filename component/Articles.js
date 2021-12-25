@@ -14,7 +14,7 @@ const Articles = () => {
                         <div className="flex-center"><Image src={ArticleIcon} alt="Articles by Russell Martin" /></div>
                         <h2 className="title mt-4">Articles</h2>
                         <Row className="mt-5">
-                            <Col md={4}>
+                            <Col lg={4}>
                                 <div className={styles.article} style={{backgroundImage: "url('img/blog-post-1.jpeg')"}}>
                                     <div>
                                         <h3>Driving My Father Home</h3>
@@ -23,7 +23,7 @@ const Articles = () => {
                                     <ArticleModal />
                                 </div>
                             </Col>
-                            <Col md={4}>
+                            <Col lg={4}>
                                 <div className={styles.article} style={{backgroundImage: "url('img/blog-post-2.jpeg')"}}>
                                     <div>
                                         <h3>Also Your Neighbour</h3>
@@ -32,7 +32,7 @@ const Articles = () => {
                                     <ArticleModal />
                                 </div>
                             </Col>
-                            <Col md={4}>
+                            <Col lg={4}>
                                 <div className={styles.article} style={{backgroundImage: "url('img/blog-post-3.jpeg')"}}>
                                     <div>
                                         <h3>Concerto</h3>

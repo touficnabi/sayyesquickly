@@ -28,12 +28,12 @@ export default function Home() {
                     <Container>
                         <Row className="justify-content-center">
                             <div className="flex-center"><Image className={styles.about_logo} src={Logo} alt="Say Yes Quickly Logo" /></div>
-                            <Col lg={8}>
+                            <Col lg={8} md={12}>
                                 <Row>
-                                    <Col md={6} className={styles.has_right_border}>
+                                    <Col lang={6} className={styles.has_right_border}>
                                         <p>Our lives are made of stories told over countless cups of coffee, broadcast and projected onto screens, passed hand-to-hand on the printed page, and whispered in bed. We all eagerly listen to the stories of others and relish telling our own. In their simplicity and grandeur, humor and drama, stories occupy the very heart of what it means to be human.</p>
                                     </Col>
-                                    <Col md={6}>
+                                    <Col lg={6}>
                                         <p>Russell Martin and his colleagues at Say Yes Quickly create imaginative, character-based stories for film, television, print, and new media—stories that get people talking, true stories that reflect the complexities of individual lives and imagined stories that mine essential elements of our shared humanity.</p>
                                     </Col>
                                 </Row>
@@ -47,7 +47,7 @@ export default function Home() {
                 <section className={styles.video}>
                     <Container>
                         <Row className="justify-content-center">
-                            <Col lg={6}>
+                            <Col lg={6} md={8}>
                                 <VSlider />
                             </Col>
                         </Row>
@@ -56,24 +56,23 @@ export default function Home() {
                 <section className={styles.russell}>
                     <Container>
                         <Row className="justify-content-center align-items-center">
-                            <Col md={5}>
+                            <Col lg={5} md={10}>
                                 <h1 className={styles.russell_name}>Russell Martin</h1>
                                 <p className={styles.russell_about}>Russell Martin directed, wrote, and produced the highly acclaimed and award-winning documentary Beautiful Faces, filmed in Mexico City, which premiered in 2012. He is a producer and co-writer of the award-winning documentary film Two Spirits and an award-winning, internationally published author of two critically acclaimed novels, The Sorrow of Archaeology and Beautiful Islands, as well as many nonfiction books. He has written for Time, the New York Times, New York Times Magazine, and National Public Radio.</p>
                                 <Link href="/"><a className="button solid">Read More</a></Link>
                             </Col>
-                            <Col md={5}>
-                                <div className="flex-center"><Image src={Russell} alt="Russell Martin" /></div>
+                            <Col lg={5} md={10} className="mt-md-5">
+                                <div className="flex-center" style={{position: "relative", display: 'block', height: Russell.height}}><Image loading="lazy" placeholder="blur" src={Russell} alt="Russell Martin" /></div>
                                 {/* <img src="img/russell-martin.jpeg" alt="Russell Martin" /> */}
                             </Col>
                         </Row>
                     </Container>
                 </section>
-                <section className={styles.books_films}>
+                {/* <section className={`${styles.books_films}`}>
                     <Container>
                         <Row>
                             <Col md={6} className="text-center">
                                 <div className="w-50 m-auto">
-                                    {/* <img src="/img/book-icon.png" alt="books by Russell Martin" /> */}
                                     <div><Image src={BookIcon} alt="books by Russell Martin" /></div>
                                     <h2 className="title mt-4">Books</h2>
                                     <p>For more than thirty years, Russell Martin has published novels and nonfiction books that have been widely acclaimed in the United States and around the world—books noted for their analysis, discipline, vivid storytelling, and poetic sensibilities.</p>
@@ -82,7 +81,6 @@ export default function Home() {
                             </Col>
                             <Col md={6} className="text-center">
                                 <div className="w-50 m-auto">
-                                    {/* <img src="/img/film-icon.png" alt="Films by Russell Martin" /> */}
                                     <div><Image src={FilmIcon} alt="Films by Russell Martin" /></div>
                                     <h2 className="title mt-4">Films</h2>
                                     <p>Russell Martin’s award-winning documentary films have been screened at film festivals and broadcast on television in numerous countries around the world—films that educate, inspire, and move viewers to action.</p>
@@ -91,7 +89,37 @@ export default function Home() {
                             </Col>
                         </Row>
                     </Container>
+                </section> */}
+
+                <section className={`${styles.books_films} no-padding`}>
+                    <Container fluid>
+                        <Row>
+                            <Col lg={6} className={`${styles.half} book`}>
+                                <div className="books">
+                                    <div className="w-50 m-auto">
+                                        {/* <img src="/img/book-icon.png" alt="books by Russell Martin" /> */}
+                                        <div><Image src={BookIcon} alt="books by Russell Martin" /></div>
+                                        <h2 className="title mt-4">Books</h2>
+                                        <p>For more than thirty years, Russell Martin has published novels and nonfiction books that have been widely acclaimed in the United States and around the world—books noted for their analysis, discipline, vivid storytelling, and poetic sensibilities.</p>
+                                        <Link href="/"><a className="button transparent mt-5">Read More</a></Link>
+                                    </div>
+                                </div>
+                            </Col>
+                            <Col lg={6} className={`${styles.half} film`}>
+                                <div className="books">
+                                    <div className="w-50 m-auto">
+                                        {/* <img src="/img/film-icon.png" alt="Films by Russell Martin" /> */}
+                                        <div><Image src={FilmIcon} alt="Films by Russell Martin" /></div>
+                                        <h2 className="title mt-4">Films</h2>
+                                        <p>Russell Martin’s award-winning documentary films have been screened at film festivals and broadcast on television in numerous countries around the world—films that educate, inspire, and move viewers to action.</p>
+                                        <Link href="/"><a className="button transparent mt-5">Read More</a></Link>
+                                    </div>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Container>
                 </section>
+
                 <Articles />
                 <section className={styles.name}>
                     <Container>

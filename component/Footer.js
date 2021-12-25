@@ -16,10 +16,10 @@ const Footer = () => {
             <footer>    
                 <a onClick={scrollToTop} className={styles.scroll_to_top}><FontAwesomeIcon icon={faAngleDoubleUp} /></a>
                 <ul className={styles.footer_nav}>
-                    <li>Who We Are</li>
-                    <li>Russell Martin</li>
-                    <li>News</li>
-                    <li>Books</li>
+                    <li><Link href="/who-we-are">Who We Are</Link></li>
+                    <li><Link href="/russell-martin">Russell Martin</Link></li>
+                    <li><Link href="/news">News</Link></li>
+                    <li><Link href="/books">Books</Link></li>
                     <li>Films</li>
                     <li>Articles</li>
                     <li>Contact</li>
