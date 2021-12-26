@@ -5,6 +5,9 @@
     .about_russell{
         display: flex;
         
+        @include tablet {
+            flex-direction: column;
+        }
     
         span{
             position: relative;
@@ -12,6 +15,12 @@
             display: inline-flex;
             align-items: flex-start;
             height: 100%;
+
+            @include tablet {
+                align-items: center;
+                justify-content: center;
+                margin-bottom: 3rem;
+            }
             
             &:before{
                 content: attr(data-name);
@@ -31,6 +40,9 @@
         justify-content: center;
         align-items: center;
         gap: 30px;
+        @include tablet {
+            flex-direction: column;
+        }
     }
 }
 

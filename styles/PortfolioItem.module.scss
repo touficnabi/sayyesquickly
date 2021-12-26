@@ -33,6 +33,9 @@
 
     .wrapper{
         display: flex;
+        @include tablet {
+            flex-direction: column;
+        }
 
         & > div{
             flex-basis: 50%;
@@ -64,6 +67,9 @@
     &.reversed{
         .wrapper{
             flex-direction: row-reverse;
+            @include tablet {
+                flex-direction: column;
+            }
 
             .portfolio__info{
                 text-align: right;

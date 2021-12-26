@@ -33,7 +33,7 @@ const WhoWeAre = () => {
                 </section>
 
                 <section>
-                    <PortfolioItem image={BfPoster} >
+                    <PortfolioItem image={BfPoster}>
                         <h4>&quot;A splendid documentary,&quot; writes Federico Reyes Heroles in Reforma.</h4>
                         <p>A compelling new film about a Mexico City hospital where young lives are transformed. Beautiful Faces is an intimate portrait of one of the world&apos;s most remarkable clinics, the disfigured young patients to whom it offers new lives, and the team of surgeons, physicians, and medical professionals who believe it&apos;s the best place in the world to practice their unique, life-transforming craft. Beautiful Faces is a film that&apos;s at once moving and inspiring, informative and challenging, a story that&apos;s told with narrative power and visual eloquence.</p>
                         <Link href="/news"><a className="button solid">Read More</a></Link>

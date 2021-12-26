@@ -61,8 +61,8 @@ export default function Home() {
                                 <p className={styles.russell_about}>Russell Martin directed, wrote, and produced the highly acclaimed and award-winning documentary Beautiful Faces, filmed in Mexico City, which premiered in 2012. He is a producer and co-writer of the award-winning documentary film Two Spirits and an award-winning, internationally published author of two critically acclaimed novels, The Sorrow of Archaeology and Beautiful Islands, as well as many nonfiction books. He has written for Time, the New York Times, New York Times Magazine, and National Public Radio.</p>
                                 <Link href="/"><a className="button solid">Read More</a></Link>
                             </Col>
-                            <Col lg={5} md={10} className="mt-md-5">
-                                <div className="flex-center" style={{position: "relative", display: 'block', height: Russell.height}}><Image loading="lazy" placeholder="blur" src={Russell} alt="Russell Martin" /></div>
+                            <Col lg={5} md={10} className="mt-5 mt-lg-0">
+                                <div className="flex-center" style={{position: "relative", display: 'block'}}><Image loading="lazy" placeholder="blur" src={Russell} alt="Russell Martin" /></div>
                                 {/* <img src="img/russell-martin.jpeg" alt="Russell Martin" /> */}
                             </Col>
                         </Row>
@@ -95,8 +95,8 @@ export default function Home() {
                     <Container fluid>
                         <Row>
                             <Col lg={6} className={`${styles.half} book`}>
-                                <div className="books">
-                                    <div className="w-50 m-auto">
+                                <div className="books col col-md-6 mx-auto">
+                                    <div className="w-100 m-auto">
                                         {/* <img src="/img/book-icon.png" alt="books by Russell Martin" /> */}
                                         <div><Image src={BookIcon} alt="books by Russell Martin" /></div>
                                         <h2 className="title mt-4">Books</h2>
@@ -106,8 +106,8 @@ export default function Home() {
                                 </div>
                             </Col>
                             <Col lg={6} className={`${styles.half} film`}>
-                                <div className="books">
-                                    <div className="w-50 m-auto">
+                                <div className="films col col-md-6 mx-auto">
+                                    <div className="w-100 m-auto">
                                         {/* <img src="/img/film-icon.png" alt="Films by Russell Martin" /> */}
                                         <div><Image src={FilmIcon} alt="Films by Russell Martin" /></div>
                                         <h2 className="title mt-4">Films</h2>

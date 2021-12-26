@@ -62,6 +62,9 @@
 
 .russell{
     padding-top: 270px;
+    @include mobile-only {
+        padding-top: 180px;
+    }
     &_about{
         //@media screen and (min-width: 768px) {
         @include desktop-only{
@@ -134,6 +137,7 @@
 
         p{
             font-size: 1.25em;
+            @include mobile-only { font-size: .85em;}
             line-height: 1.5;
             margin-top: 40px;
         }

@@ -12,7 +12,7 @@ const PortfolioItem = ({reversed, book, name, image, children}) => {
                     <Row className="justify-content-center">
                         <Col md={10}>
                             <div className={styles.wrapper}>
-                                <div className={styles.portfolio__image}>
+                                <div className={`${styles.portfolio__image} mb-5 mb-lg-0`}>
                                     <div>
                                         <Image src={image} alt={name} />
                                         <div className={styles.book_name}><p>{name}</p></div>
@@ -35,7 +35,7 @@ const PortfolioItem = ({reversed, book, name, image, children}) => {
                 <Row className="justify-content-center">
                     <Col md={10}>
                         <div className={styles.wrapper}>
-                            <div className={styles.portfolio__image}>
+                            <div className={`${styles.portfolio__image} mb-5 mb-lg-0`}>
                                 <Image src={image} alt={children[0].props.children} />
                             </div>
                             <div className={styles.portfolio__info}>
