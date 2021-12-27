@@ -3,5 +3,11 @@
 .books{
     > div:nth-child(odd){
         background-color: $red;
+
+        a{
+            &:hover {
+                background: $green;
+            }
+        }
     }
 }

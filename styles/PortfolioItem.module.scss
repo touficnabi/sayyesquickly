@@ -10,6 +10,27 @@
             > div{
                 display: flex;
                 position: relative;
+                margin: 0 70px 70px 0;
+
+                &:after {
+                    content: attr(data-name);
+                    position: absolute;
+                    width: 100%;
+                    height: 100%;
+                    writing-mode: vertical-rl;
+                    text-orientation: mixed;
+                    background: transparentize($color: #000000, $amount: .82);
+                    top: 70px;
+                    left: 70px;
+
+                    font-size: 1.4em;
+                    color: $beige;
+                    font-weight: bold;
+                    text-align: center;
+                    text-transform: uppercase;
+                    padding-right: 10px;
+                }
+
                 > div { z-index: 9; } //image container div created by next/image
                 .book_name{
                     position: absolute;
@@ -33,6 +54,8 @@
 
     .wrapper{
         display: flex;
+        align-items: center;
+
         @include tablet {
             flex-direction: column;
         }
