@@ -15,12 +15,31 @@
             display: inline-flex;
             align-items: flex-start;
             height: 100%;
+            
+
 
             @include tablet {
                 align-items: center;
                 justify-content: center;
                 margin-bottom: 3rem;
             }
+
+            @include desktop-only {
+                margin-right: 4rem;
+                > div {
+                    display: flex !important;
+                    width: 100%;
+    
+                    > div {
+                        width: 100%;
+    
+                        >img {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+
             
             &:before{
                 content: attr(data-name);

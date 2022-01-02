@@ -120,7 +120,7 @@ export default function Home() {
                     </Container>
                 </section>
 
-                <Articles />
+                <Articles id="home-article" />
                 <section className={styles.name}>
                     <Container>
                             <Row className="justify-content-center">

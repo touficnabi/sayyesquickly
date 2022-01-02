@@ -5,9 +5,9 @@ import ArticleModal from './ArticleModal';
 
 import ArticleIcon from '../public/img/article-icon.png'
 
-const Articles = () => {
+const Articles = ({id}) => {
     return(
-        <section className={styles.articles}>
+        <section className={styles.articles} id={id}>
             <Container>
                 <Row className="justify-content-center">
                     <Col md={10}>
@@ -43,7 +43,7 @@ const Articles = () => {
                             </Col>
                         </Row>
                     </Col>
-                    <div className={styles.center_btn}><a href="/" className="button solid">Read More</a></div>
+                    <div className={styles.center_btn}><a className="button solid">Read More</a></div>
                 </Row>
             </Container>
         </section>
