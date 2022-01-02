@@ -15,7 +15,6 @@ const PortfolioItem = ({reversed, book, name, image, children}) => {
                                 <div className={`${styles.portfolio__image} mb-5 mb-lg-0`}>
                                     <div data-name={name}>
                                         <Image src={image} alt={name} />
-                                        {/* <div className={styles.book_name}><p>{name}</p></div> */}
                                     </div>
                                 </div>
                                 <div className={styles.portfolio__info}>

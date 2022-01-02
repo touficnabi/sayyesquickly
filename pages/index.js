@@ -30,7 +30,7 @@ export default function Home() {
                             <div className="flex-center"><Image className={styles.about_logo} src={Logo} alt="Say Yes Quickly Logo" /></div>
                             <Col lg={8} md={12}>
                                 <Row>
-                                    <Col lang={6} className={styles.has_right_border}>
+                                    <Col lg={6} className={styles.has_right_border}>
                                         <p>Our lives are made of stories told over countless cups of coffee, broadcast and projected onto screens, passed hand-to-hand on the printed page, and whispered in bed. We all eagerly listen to the stories of others and relish telling our own. In their simplicity and grandeur, humor and drama, stories occupy the very heart of what it means to be human.</p>
                                     </Col>
                                     <Col lg={6}>

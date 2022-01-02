@@ -3,19 +3,10 @@ import Link from 'next/link';
 import PageHero from '../component/PageHero';
 import PortfolioItem from '../component/PortfolioItem';
 import HeroImage from '../public/img/books-hero.jpeg';
-import book1 from '../public/img/book1.jpeg';
 import styles from '../styles/Books.module.scss'
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
-const Books = ({bookImage}) => {
-    console.log('book imFW', book1)
-    console.log('books', bookImage)
-
-    const fakeImg = {
-        src: '/wp-content/uploads/2022/01/beethovens-hair.jpeg',
-        height: 200,
-        width: 320
-    }
+const Books = ({books}) => {
     return(
         <main>
             <Head>
@@ -24,7 +15,7 @@ const Books = ({bookImage}) => {
             <PageHero text="Books" image={HeroImage} />
             <div className={styles.books}>
 
-                {bookImage.map((book, index) => index % 2 ==0 ? (
+                {books.map((book, index) => index % 2 ==0 ? (
                     <PortfolioItem key={book.id} book image={book.image} name={book.acf.book_name}>
                         <h4>{book.acf.book_tagline}</h4>
                         <span dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
@@ -78,9 +69,9 @@ export const getStaticProps = async () => {
     // const books = res.data.books.edges.map(({node}) => node);
 
     const res = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/book?_embed&filter[orderby]=date&order=asc')
-    const books = await res.json();
+    const items = await res.json();
 
-    const bookImage = books.map(book => {
+    const books = items.map(book => {
         return {...book, image: {
             src: book.better_featured_image.source_url,
             height: book.better_featured_image.media_details.height,
@@ -90,7 +81,7 @@ export const getStaticProps = async () => {
 
     return {
         props: {
-            bookImage
+            books
         }
     }
 }

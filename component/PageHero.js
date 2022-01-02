@@ -3,10 +3,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react';
+import Image from 'next/image';
 
 const PageHero = ({text, image}) => {
 
-    const bottom = useRef(null)
+    const bottom = useRef(null);
 
     const scrollDown = () => {
         bottom.current.scrollIntoView({behavior: 'smooth'});
