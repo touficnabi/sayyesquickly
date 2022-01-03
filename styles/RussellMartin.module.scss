@@ -47,8 +47,11 @@
             }
         }
     
-        p{
+        &_russell_description{
             flex-basis: 55%;
+            p {
+                margin-bottom: .5rem;
+            }
         }
     }
 }
@@ -70,6 +73,10 @@
         border: 2px solid #ffffeb;
         padding: 40px;
         padding-bottom: 0;
+
+        h5 a {
+            color: inherit;
+        }
 
         a {
             margin-bottom: -22.5px;

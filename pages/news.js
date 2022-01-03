@@ -4,7 +4,6 @@ import NewsHero from '../public/img/news-hero.jpeg';
 import { Container, Row, Col } from "react-bootstrap";
 
 const news = ({news}) => {
-    console.log(news)
     return(
         <main>
             <PageHero text="News" image={NewsHero} />

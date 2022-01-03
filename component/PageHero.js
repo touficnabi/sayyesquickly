@@ -15,7 +15,7 @@ const PageHero = ({text, image}) => {
 
     return(
         <>
-            <div className={styles.pageHero} style={{backgroundImage: `url('${image.src}')`}}>
+            <div className={styles.pageHero} style={{backgroundImage: `url('${image}')`}}>
                 <Container>
                     <Row>
                         <Col md={12}>

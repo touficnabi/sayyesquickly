@@ -1,69 +1,99 @@
 import Head from "next/head";
 import PageHero from "../component/PageHero";
-import HeroImage from '../public/img/who-we-are-hero.jpeg';
 import { Container, Row, Col } from "react-bootstrap";
 import styles from '../styles/WhoWeAre.module.scss';
 import PortfolioItem from "../component/PortfolioItem";
-import BfPoster from '../public/img/beautiful-face-poster.jpeg';
-import picasso from '../public/img/picassos-war.jpeg';
 import { Parallax } from "react-parallax";
 import Link from "next/link";
 
-const WhoWeAre = () => {
-    return (
-        <>
-            <Head>
-                <title>Who We Are – Say Yes Quickly</title>
-                <meta name="description" content="This is the index or home page of the Say Yes Quickly Productions website." />
-                <link rel="icon" href="/favicon.ico" />
-            </Head>
-
-            <main>
-                <PageHero text="Who We Are" image={HeroImage} />
-                <section className={styles.who_we_are}>
-                    <Container>
-                        <Row className="justify-content-center">
-                            <Col md={9}>
-                                <h5 className="text-center">
-                                    Russell Martin and his colleagues bring many years of experience to their work in print, television, and film. Beautiful Faces is a &quot;splendid documentary&quot; according to Reforma, Mexico&apos;s leading newspaper. The documentary film Two Spirits was broadcast during the 2010-2011 season of the PBS series &quot;Independent Lens,&quot; and won the season&apos;s Audience Award. Russell Martin&apos;s bestselling book projects--including Beethoven&apos;s Hair, Picasso&apos;s War, and Out of Silence--have been translated into dozens of languages throughout the world.
-                                </h5>
-                            </Col>
-                        </Row>
-                    </Container>
-                </section>
-
-                <section>
-                    <PortfolioItem image={BfPoster}>
-                        <h4>&quot;A splendid documentary,&quot; writes Federico Reyes Heroles in Reforma.</h4>
-                        <p>A compelling new film about a Mexico City hospital where young lives are transformed. Beautiful Faces is an intimate portrait of one of the world&apos;s most remarkable clinics, the disfigured young patients to whom it offers new lives, and the team of surgeons, physicians, and medical professionals who believe it&apos;s the best place in the world to practice their unique, life-transforming craft. Beautiful Faces is a film that&apos;s at once moving and inspiring, informative and challenging, a story that&apos;s told with narrative power and visual eloquence.</p>
-                        <Link href="/news"><a className="button solid">Read More</a></Link>
-                    </PortfolioItem>
-                    <PortfolioItem image={picasso} reversed>
-                        <h4>The Destruction of Guernica, And The Masterpiece That Changed the World.</h4>
-                        <p>&quot;Imaginative cultural historian Martin crafts a well-integrated and fascinating account of Picasso&apos;s famous painting and the horrible events that inspired it. The Author&apos;s signature approach to seemingly offbeat subjects is careful research filtered through a novelistic sensibility to grasp the inherent story, which he unfolds in the engaging, almost offhand manner of a fictional amateur sleuth.<br />--Kirkus Reviews</p>
-                        <Link href="/news"><a className="button solid">Read More</a></Link>
-                    </PortfolioItem>
-                </section>
-
-                <section className={`${styles.russell} no-padding`}>
-                    <Parallax bgImage="./img/ute-mountain.jpeg" strength={240} renderLayer={percentage => ( <div data-percentage={percentage} /> )}>
+const WhoWeAre = ({loaded, pageContent, film, book}) => {
+    const bookImg = {
+        src : book.better_featured_image.source_url,
+        width: book.better_featured_image.media_details.width,
+        height: book.better_featured_image.media_details.height
+    }
+    const filmImg = {
+        src : film.better_featured_image.source_url,
+        width: film.better_featured_image.media_details.width,
+        height: film.better_featured_image.media_details.height
+    }
+    if (loaded){        
+        return (
+            <>
+                <Head>
+                    <title>{pageContent.title.rendered} – Say Yes Quickly</title>
+                    <meta name="description" content="This is the index or home page of the Say Yes Quickly Productions website." />
+                    <link rel="icon" href="/favicon.ico" />
+                </Head>
+    
+                <main>
+                    <PageHero text={pageContent.title.rendered} image={pageContent.better_featured_image.source_url} />
+                    <section className={styles.who_we_are}>
                         <Container>
                             <Row className="justify-content-center">
                                 <Col md={9}>
-                                    <div className={styles.russell_box}>
-                                        <h5 className="text-center">Russell Martin is known for synthesizing the historic and contemporary elements of filmed and written stories, grounding narrative in careful research, and making complex ideas readily comprehensible and deeply humane.</h5>
-                                        <div className="flex-center">
-                                            <Link href="/news"><a className="button solid mt-4">News</a></Link>
-                                        </div>
-                                    </div>
+                                    <h5 className="text-center">
+                                        Russell Martin and his colleagues bring many years of experience to their work in print, television, and film. Beautiful Faces is a &quot;splendid documentary&quot; according to Reforma, Mexico&apos;s leading newspaper. The documentary film Two Spirits was broadcast during the 2010-2011 season of the PBS series &quot;Independent Lens,&quot; and won the season&apos;s Audience Award. Russell Martin&apos;s bestselling book projects--including Beethoven&apos;s Hair, Picasso&apos;s War, and Out of Silence--have been translated into dozens of languages throughout the world.
+                                    </h5>
                                 </Col>
                             </Row>
                         </Container>
-                    </Parallax>
-                </section>
-            </main>
-        </>
-    )
+                    </section>
+    
+                    <section>
+                        <PortfolioItem image={filmImg}>
+                            <h4 dangerouslySetInnerHTML={{__html: film.acf.film_tagline}}></h4>
+                            <span dangerouslySetInnerHTML={{__html: film.content.rendered}}></span>
+                            <Link href="/news"><a className="button solid">Read More</a></Link>
+                        </PortfolioItem>
+                        <PortfolioItem image={bookImg} reversed>
+                            <h4 dangerouslySetInnerHTML={{__html: book.acf.book_tagline}}></h4>
+                            <span dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
+                            <Link href="/news"><a className="button solid">Read More</a></Link>
+                        </PortfolioItem>
+                    </section>
+    
+                    <section className={`${styles.russell} no-padding`}>
+                        <Parallax bgImage="./img/ute-mountain.jpeg" strength={240} renderLayer={percentage => ( <div data-percentage={percentage} /> )}>
+                            <Container>
+                                <Row className="justify-content-center">
+                                    <Col md={9}>
+                                        <div className={styles.russell_box}>
+                                            <h5 className="text-center">{pageContent.acf.about_russell}</h5>
+                                            <div className="flex-center">
+                                                <Link href={pageContent.acf.button_url}><a className="button solid mt-4">{pageContent.acf.button_text}</a></Link>
+                                            </div>
+                                        </div>
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </Parallax>
+                    </section>
+                </main>
+            </>
+        )
+    }
+    return <h4>Loading...</h4>
+}
+
+export const getStaticProps = async () => {
+    const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/pages/38');
+    const pageContent = await query.json();
+
+    const filmQuery = await fetch(`https://cms.sayyesquickly.net/wp-json/wp/v2/film/${pageContent.acf.film_id}`);
+    const film = await filmQuery.json();
+    
+    const bookQuery = await fetch(`https://cms.sayyesquickly.net/wp-json/wp/v2/book/${pageContent.acf.book_id}`);
+    const book = await bookQuery.json();
+    
+    return {
+        props: {
+            pageContent, 
+            film, 
+            book,
+            loaded: true
+        }
+    }
 }
 
 export default WhoWeAre;
