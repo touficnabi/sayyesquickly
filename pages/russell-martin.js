@@ -4,11 +4,9 @@ import { Col, Container, Row } from "react-bootstrap";
 import styles from '../styles/RussellMartin.module.scss';
 import Image from "next/image";
 import Link from 'next/link';
-import russell from "../public/img/russell-martin.jpeg";
 import { Parallax } from "react-parallax";
 
 const RussellMartin = ({pageContent, headshot, loaded}) => {
-    console.log(pageContent)
     const russell_headshot = {
         src: headshot.source_url,
         height: headshot.media_details.height,

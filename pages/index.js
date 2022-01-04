@@ -13,7 +13,7 @@ import BookIcon from '../public/img/book-icon.png';
 import FilmIcon from '../public/img/film-icon.png'
 import VSlider from '../component/VSlider';
 
-export default function Home() {
+export default function Home({posts}) {
     return (
         <>
             <Head>
@@ -38,7 +38,7 @@ export default function Home() {
                                     </Col>
                                 </Row>
                                 <div className="center_items">
-                                    <Link href="/about"><a className="button solid alt-green">Who We Are</a></Link> 
+                                    <Link href="/who-we-are"><a className="button solid alt-green">Who We Are</a></Link> 
                                 </div>
                             </Col>
                         </Row>
@@ -101,7 +101,7 @@ export default function Home() {
                                         <div><Image src={BookIcon} alt="books by Russell Martin" /></div>
                                         <h2 className="title mt-4">Books</h2>
                                         <p>For more than thirty years, Russell Martin has published novels and nonfiction books that have been widely acclaimed in the United States and around the world—books noted for their analysis, discipline, vivid storytelling, and poetic sensibilities.</p>
-                                        <Link href="/"><a className="button transparent mt-5">Read More</a></Link>
+                                        <Link href="/books"><a className="button transparent mt-5">Read More</a></Link>
                                     </div>
                                 </div>
                             </Col>
@@ -112,7 +112,7 @@ export default function Home() {
                                         <div><Image src={FilmIcon} alt="Films by Russell Martin" /></div>
                                         <h2 className="title mt-4">Films</h2>
                                         <p>Russell Martin’s award-winning documentary films have been screened at film festivals and broadcast on television in numerous countries around the world—films that educate, inspire, and move viewers to action.</p>
-                                        <Link href="/"><a className="button transparent mt-5">Read More</a></Link>
+                                        <Link href="/films"><a className="button transparent mt-5">Read More</a></Link>
                                     </div>
                                 </div>
                             </Col>
@@ -120,7 +120,7 @@ export default function Home() {
                     </Container>
                 </section>
 
-                <Articles id="home-article" />
+                <Articles id="home-article" posts={posts} />
                 <section className={styles.name}>
                     <Container>
                             <Row className="justify-content-center">
@@ -148,4 +148,13 @@ export default function Home() {
             </main>
         </>
     )
+}
+
+export const getStaticProps = async () => {
+    const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/posts?_embed');
+    const posts = await query.json();
+
+    return {
+        props: {posts}
+    }
 }

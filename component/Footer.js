@@ -20,9 +20,9 @@ const Footer = () => {
                     <li><Link href="/russell-martin">Russell Martin</Link></li>
                     <li><Link href="/news">News</Link></li>
                     <li><Link href="/books">Books</Link></li>
-                    <li>Films</li>
-                    <li>Articles</li>
-                    <li>Contact</li>
+                    <li><Link href="/films">Films</Link></li>
+                    <li><Link href="/#home-article">Articles</Link></li>
+                    <li><Link href="/contact">Contact</Link></li>
                     <li>Sitemap</li>
                 </ul>
                 <div className={styles.footer_social}>

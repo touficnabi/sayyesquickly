@@ -1,4 +1,4 @@
-@import '_variables.scss';
+@import 'variables';
 
 .hero{
     min-height: 100vh;
@@ -22,4 +22,33 @@
     img{
         border-radius: 4px;
     }
+
+    .scrollToBelowHero {
+        position: absolute;
+        bottom: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: $beige;
+        color: $green;
+        border-radius: 40px;
+        overflow: hidden;
+        transition: none;
+        
+        svg {
+            animation: scrollDown 5s ease infinite;
+            overflow: hidden;
+            width: 45px;
+            height: 45px;
+            padding: 15px;
+        }
+    }
+}
+
+@keyframes scrollDown {
+    0% {transform: translateY(0%); opacity: 1;}
+    10% {transform: translateY(100%); opacity: 0;}
+    10.00001% {transform: translateY(-100%); opacity: 0;}
+    20% {transform: translateY(0); opacity: 1;}
+    
+    
 }

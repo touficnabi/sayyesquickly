@@ -3,7 +3,6 @@ import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 import { useRef } from 'react';
-import Image from 'next/image';
 
 const PageHero = ({text, image}) => {
 
@@ -15,7 +14,7 @@ const PageHero = ({text, image}) => {
 
     return(
         <>
-            <div className={styles.pageHero} style={{backgroundImage: `url('${image}')`}}>
+            <div className={styles.pageHero} style={ typeof image === "object" ? {backgroundImage: `url('${image.src}')`} : {backgroundImage: `url('${image}')`}}>
                 <Container>
                     <Row>
                         <Col md={12}>

@@ -27,15 +27,23 @@
         max-width: $bplarge;
         >div {
             border: none;
+            background: $green;
 
             .close {
+                border: none;
+                padding: 0;
                 width: 45px;
                 height: 45px;
                 border-radius: 30px;
-                background: $beige !important;
-                border: none;
-                padding: 0;
+                overflow: hidden;
+                position: absolute;
+                top: 20px;
+                right: 20px;
+                z-index: 99;
                 svg {
+                    width: 100%;
+                    height: 100%;
+                    background: $beige !important;
                     color: $green !important;
                     padding: 15px;
                 }
@@ -44,6 +52,34 @@
                 width: 100%;
                 height: 250px;
                 position: relative;
+                overflow: hidden;
+
+                > div {
+                    width: 100%;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    >div {
+                        width: 100%;
+                        img {width: 100%;}
+                    }
+                }
+            }
+
+            .content {
+                padding: 30px;
+                .article_meta {
+                    padding: 0 0 1rem;
+                }
+                a{
+                    color: inherit;
+                    text-decoration: underline;
+                }
+                &_body {
+                    p {
+                        margin-bottom: 0.5rem;
+                    }
+
+                }
             }
         }
     }
