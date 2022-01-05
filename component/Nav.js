@@ -15,6 +15,7 @@ export default function Nav() {
     const nav1 = useRef(null);
     const nav2 = useRef(null);
     const navbar = useRef(null);
+    const contact = useRef(null)
 
     const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false)
 
@@ -45,7 +46,13 @@ export default function Nav() {
                 start: 'top top',
                 scrub: true,
                 end: '+=300px'
-            } })
+            }})
+            gsap.from(contact.current, {alpha: 0, display: "none", scrollTrigger: {
+                trigger: '.very-top',
+                start: 'top top',
+                scrub: true,
+                end: '+=300'
+            }})
         }
     }, [isMobile])
 
@@ -79,6 +86,7 @@ export default function Nav() {
                     </Container>
                 </Navbar>
             </header>
+            <span className={Styles.nav_contact} ref={contact}><Link href="/contact">Contact</Link></span>
         </>
     )
 }
