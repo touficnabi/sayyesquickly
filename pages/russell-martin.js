@@ -59,7 +59,7 @@ const RussellMartin = ({pageContent, headshot, loaded}) => {
                         <Parallax bgImage="./img/san-miguels.jpeg" strength={240} renderLayer={percentage => ( <div data-percentage={percentage} /> )}>
                             <Container>
                                 <Row className="justify-content-center">
-                                    <Col md={9}>
+                                    <Col lg={9}>
                                         <div className={styles.russell_box}>
                                             <h5 className="text-center" dangerouslySetInnerHTML={{__html: pageContent.acf.about_russell}}></h5>
                                             <div className="flex-center">

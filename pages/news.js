@@ -2,27 +2,33 @@ import News from "../component/News"
 import PageHero from "../component/PageHero";
 import NewsHero from '../public/img/news-hero.jpeg';
 import { Container, Row, Col } from "react-bootstrap";
+import Head from 'next/head';
 
 const news = ({news}) => {
     return(
-        <main>
-            <PageHero text="News" image={NewsHero} />
-            <section>
-                <Container>
-                    <Row className="justify-content-center">
-                        <Col lg={7} md={12}>
+        <>
+            <Head>
+                <title>News Article from Russell Martin</title>
+            </Head>
+            <main>
+                <PageHero text="News" image={NewsHero} />
+                <section>
+                    <Container>
+                        <Row className="justify-content-center">
+                            <Col lg={7} md={12}>
 
-                            {news.map(news => (
-                                <News key={news.id} title={news.title.rendered}>
-                                    {news.content.rendered}
-                                </News>
-                            ))}
+                                {news.map(news => (
+                                    <News key={news.id} title={news.title.rendered}>
+                                        {news.content.rendered}
+                                    </News>
+                                ))}
 
-                        </Col>
-                    </Row>
-                </Container>
-            </section>
-        </main>
+                            </Col>
+                        </Row>
+                    </Container>
+                </section>
+            </main>
+        </>
     )
 }
 
