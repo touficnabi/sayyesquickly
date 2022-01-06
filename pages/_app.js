@@ -4,13 +4,12 @@ import gsap from 'gsap';
 import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 import Layout from '../component/Layout';
 import Router from 'next/router'
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useRef } from 'react';
 
 gsap.registerPlugin(ScrollTrigger)
 
 function MyApp({ Component, pageProps }) {
-
-    const [isLoading, setInLoading] = useState(false);
+    
     const load = useRef(null)
 
     useEffect(() => {
@@ -20,7 +19,6 @@ function MyApp({ Component, pageProps }) {
             duration: .5
         })
         Router.events.on('routeChangeStart', (url) => {
-            setInLoading(true);
             gsap.to(load.current, {
                 alpha: 1, 
                 display: "block",
@@ -28,7 +26,6 @@ function MyApp({ Component, pageProps }) {
             })
         })
         Router.events.on('routeChangeComplete', (url) => {
-            setInLoading(false)
             gsap.to(load.current, {
                 alpha: 0, 
                 display: "none",

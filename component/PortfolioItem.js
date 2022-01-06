@@ -7,7 +7,7 @@ const PortfolioItem = ({reversed, book, name, image, children}) => {
 
     if (book){
         return(
-            <div className={ reversed ? `${styles.portfolio} ${styles.reversed}` : styles.portfolio} style={book? {padding: '100px 0', margin : '0'} : ''} >
+            <div itemScope itemType="https://schema.org/Book" className={ reversed ? `${styles.portfolio} ${styles.reversed}` : styles.portfolio} style={book? {padding: '100px 0', margin : '0'} : ''} >
                 <Container fluid className={styles.book}>
                     <Row className="justify-content-center">
                         <Col md={10}>
