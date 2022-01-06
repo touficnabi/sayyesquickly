@@ -27,6 +27,7 @@ const Contact = () => {
     }
     
     return (
+        <GoogleReCaptchaProvider reCaptchaKey="6LcjbSEUAAAAAEFAqvYqmxVP4aCbe-VrOPgFKLYG">
         <>
             <main>
                 <PageHero text="Contact" image={HeroImage} /> 
@@ -40,9 +41,7 @@ const Contact = () => {
                                     <TextField onChange={(e) => setEmail(e.target.value)} id="filled-basic" label="Email" variant="filled" type="email" value={email} />
                                     <TextField onChange={(e) => setSubject(e.target.value)} id="filled-basic" label="Subject" variant="filled" type="subject" value={subject} />
                                     <TextField onChange={(e) => setMessage(e.target.value)} id="filled-basic" label="Message" variant="filled" value={message} rows={5} maxRows={4} multiline />
-                                    <GoogleReCaptchaProvider reCaptchaKey="6LcjbSEUAAAAAEFAqvYqmxVP4aCbe-VrOPgFKLYG">
-                                        <GoogleReCaptcha />
-                                    </GoogleReCaptchaProvider> 
+                                        <GoogleReCaptcha onVerify={(val) => console.log(val)} />
                                     <a onClick={handleSubmit} className="button solid red text-center">Submit</a>
                                 </form>
                             </Col>
@@ -68,6 +67,7 @@ const Contact = () => {
                 </section> 
             </main>    
         </>
+        </GoogleReCaptchaProvider> 
     )
 }
 
