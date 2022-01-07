@@ -42,7 +42,7 @@ const Contact = () => {
                                     <TextField onChange={(e) => setSubject(e.target.value)} id="filled-basic" label="Subject" variant="filled" type="subject" value={subject} />
                                     <TextField onChange={(e) => setMessage(e.target.value)} id="filled-basic" label="Message" variant="filled" value={message} rows={5} maxRows={4} multiline />
                                         <GoogleReCaptcha onVerify={(val) => console.log(val)} />
-                                    <a onClick={handleSubmit} className="button solid red text-center">Submit</a>
+                                    <a onClick={handleSubmit} className="button solid red text-center">Submit now</a>
                                 </form>
                             </Col>
                         </Row>
@@ -57,7 +57,7 @@ const Contact = () => {
                                     <div className={styles.russell_box}>
                                         <h5 className="text-center">Russell Martin is known for synthesizing the historic and contemporary elements of filmed and written stories, grounding narrative in careful research, and making complex ideas readily comprehensible and deeply humane.</h5>
                                         <div className="flex-center">
-                                            <Link href="/news"><a className="button solid mt-4">News</a></Link>
+                                            <Link href="/news"><a className="button solid mt-4">News -2</a></Link>
                                         </div>
                                     </div>
                                 </Col>
