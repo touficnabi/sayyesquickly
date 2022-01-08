@@ -257,16 +257,16 @@ h2{
 
 //CONTACT FORM
 .MuiInputLabel-root{
-    color: transparentize($beige, .1);
+    color: transparentize($beige, .1) !important;
     &.Mui-focused {
-        color: transparentize($beige, .7);
+        color: transparentize($beige, .7) !important;
     }
 }
 
 .MuiInputBase-colorPrimary{
-    background-color: transparentize($color: #000000, $amount: .75);
+    background-color: transparentize($color: #000000, $amount: .75) !important;
     &:before {
-        border-bottom-color: transparentize($beige, .7);
+        border-bottom-color: transparentize($beige, .7) !important;
     }
 
     &:after {
