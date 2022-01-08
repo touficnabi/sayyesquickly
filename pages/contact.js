@@ -28,6 +28,8 @@ const Contact = () => {
         })
     }
     
+    console.log('environment', process.env.NODE_ENV);
+
     return (
         <GoogleReCaptchaProvider reCaptchaKey="6Ld4f_kdAAAAAJrEzYJBGn1a78S3cilBFGux5FPg">
         <>
