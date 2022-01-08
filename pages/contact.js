@@ -27,7 +27,7 @@ const Contact = () => {
     }
     
     return (
-        <GoogleReCaptchaProvider reCaptchaKey="6LcjbSEUAAAAAEFAqvYqmxVP4aCbe-VrOPgFKLYG">
+        <GoogleReCaptchaProvider reCaptchaKey="6Ld4f_kdAAAAAJrEzYJBGn1a78S3cilBFGux5FPg">
         <>
             <main>
                 <PageHero text="Contact" image={HeroImage} /> 
