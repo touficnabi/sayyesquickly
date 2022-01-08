@@ -1,7 +1,7 @@
 import PageHero from "../component/PageHero";
 import HeroImage from '../public/img/contact-hero.jpeg';
 import styles from '../styles/Contact.module.scss';
-// import { TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Parallax } from "react-parallax";
@@ -36,12 +36,12 @@ const Contact = () => {
                         <Row className="justify-content-center">
                             <Col lg={8}>
                                 <form className={styles.form} action="" onSubmit={handleSubmit}>
-                                    {/* <TextField onChange={(e) => setName(e.target.value)} id="filled-basic" label="Name" variant="filled" type="name" value={name} />
+                                    <TextField onChange={(e) => setName(e.target.value)} id="filled-basic" label="Name" variant="filled" type="name" value={name} />
                                     <TextField onChange={(e) => setPhone(e.target.value)} id="filled-basic" label="Phone" variant="filled" type="phone" value={phone} />
                                     <TextField onChange={(e) => setEmail(e.target.value)} id="filled-basic" label="Email" variant="filled" type="email" value={email} />
                                     <TextField onChange={(e) => setSubject(e.target.value)} id="filled-basic" label="Subject" variant="filled" type="subject" value={subject} />
-                                    <TextField onChange={(e) => setMessage(e.target.value)} id="filled-basic" label="Message" variant="filled" value={message} rows={5} maxRows={4} multiline /> */}
-                                        <GoogleReCaptcha onVerify={(val) => console.log(val)} />
+                                    <TextField onChange={(e) => setMessage(e.target.value)} id="filled-basic" label="Message" variant="filled" value={message} rows={5} maxRows={4} multiline />
+                                        <GoogleReCaptcha onVerify={(val) => console.log('recap', sval)} />
                                     <a onClick={handleSubmit} className="button solid red text-center">Submit now</a>
                                 </form>
                             </Col>
