@@ -41,7 +41,7 @@ const Contact = () => {
                                     <TextField onChange={(e) => setEmail(e.target.value)} id="filled-basic" label="Email" variant="filled" type="email" value={email} />
                                     <TextField onChange={(e) => setSubject(e.target.value)} id="filled-basic" label="Subject" variant="filled" type="subject" value={subject} />
                                     <TextField onChange={(e) => setMessage(e.target.value)} id="filled-basic" label="Message" variant="filled" value={message} rows={5} maxRows={4} multiline />
-                                        <GoogleReCaptcha onVerify={(val) => console.log('recap', sval)} />
+                                        <GoogleReCaptcha onVerify={(val) => console.log('recap', val)} />
                                     <a onClick={handleSubmit} className="button solid red text-center">Submit now</a>
                                 </form>
                             </Col>
