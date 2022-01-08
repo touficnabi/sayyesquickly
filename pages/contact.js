@@ -9,6 +9,7 @@ import Link from 'next/link';
 import { GoogleReCaptcha, GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 
 const Contact = () => {
+    const [ recaptcha, setRecaptcha ] = useState(null)
     const [ name, setName ] = useState(null);
     const [ phone, setPhone ] = useState(null);
     const [ email, setEmail ] = useState(null);
@@ -18,11 +19,12 @@ const Contact = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         console.log({
+            'captcha' : captcha,
             "name": name,
             "phone" : phone,
             "email" : email,
             "subject" : subject,
-            "message" : message
+            "message" : message,
         })
     }
     
@@ -41,8 +43,8 @@ const Contact = () => {
                                     <TextField onChange={(e) => setEmail(e.target.value)} id="filled-basic" label="Email" variant="filled" type="email" value={email} />
                                     <TextField onChange={(e) => setSubject(e.target.value)} id="filled-basic" label="Subject" variant="filled" type="subject" value={subject} />
                                     <TextField onChange={(e) => setMessage(e.target.value)} id="filled-basic" label="Message" variant="filled" value={message} rows={5} maxRows={4} multiline />
-                                        <GoogleReCaptcha onVerify={(val) => console.log('recap', val)} />
-                                    <a onClick={handleSubmit} className="button solid red text-center">Submit now</a>
+                                        <GoogleReCaptcha onVerify={(val) => setRecaptcha(val)} />
+                                    <a onClick={handleSubmit} className="button solid red text-center">Submit</a>
                                 </form>
                             </Col>
                         </Row>
@@ -57,7 +59,7 @@ const Contact = () => {
                                     <div className={styles.russell_box}>
                                         <h5 className="text-center">Russell Martin is known for synthesizing the historic and contemporary elements of filmed and written stories, grounding narrative in careful research, and making complex ideas readily comprehensible and deeply humane.</h5>
                                         <div className="flex-center">
-                                            <Link href="/news"><a className="button solid mt-4">News -2</a></Link>
+                                            <Link href="/news"><a className="button solid mt-4">News</a></Link>
                                         </div>
                                     </div>
                                 </Col>
