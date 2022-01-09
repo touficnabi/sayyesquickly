@@ -270,7 +270,7 @@ h2{
     }
 
     &:after {
-        border-bottom-color: $beige;
+        border-bottom-color: $beige !important;
     }
 
     &:hover {

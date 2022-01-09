@@ -10,9 +10,9 @@ const Films = ({films}) => {
     return(
         <main>
             <Head>
-                <title>Films by Russell Martin 2</title>
+                <title>Films by Russell Martin</title>
             </Head>
-            <PageHero text="Films ee" image={HeroImage} />
+            <PageHero text="Films" image={HeroImage} />
             <div className={styles.books}>
 
                 {films.map((film, index) => index % 2 ==0 ? (
