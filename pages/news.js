@@ -8,7 +8,7 @@ const news = ({news}) => {
     return(
         <>
             <Head>
-                <title>News Article from Russell Martin</title>
+                <title>News Articles by Russell Martin</title>
             </Head>
             <main>
                 <PageHero text="News" image={NewsHero} />

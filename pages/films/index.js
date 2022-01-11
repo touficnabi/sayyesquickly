@@ -15,7 +15,7 @@ const Films = ({films}) => {
             <PageHero text="Films" image={HeroImage} />
             <div className={styles.books}>
 
-                {films.map((film, index) => index % 2 ==0 ? (
+                {films.map((film, index) => index % 2 == 0 ? (
                     <PortfolioItem key={film.id} book image={film.image} name={film.acf.film_name}>
                         <h4>{film.acf.film_tagline}</h4>
                         <span dangerouslySetInnerHTML={{__html: film.content.rendered}}></span>

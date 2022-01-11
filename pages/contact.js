@@ -7,8 +7,12 @@ import { Container, Row, Col } from "react-bootstrap";
 import { Parallax } from "react-parallax";
 import Link from 'next/link';
 import { GoogleReCaptcha, GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
+import axios from "axios";
 
 const Contact = () => {
+
+    const recaptcha_key = process.env.NODE_ENV === "Production" ? process.env.REACT_API_RECAPTCHA_PROD : process.env.REACT_API_RECAPTCHA_STAGE;
+
     const [ recaptcha, setRecaptcha ] = useState(null)
     const [ name, setName ] = useState(null);
     const [ phone, setPhone ] = useState(null);
@@ -18,6 +22,20 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        
+        const formData = new FormData();
+        formData.append('name', name);
+        formData.append('phone', phone);
+        formData.append('email', email);
+        formData.append('subject', subject);
+        formData.append('message', message);
+        
+        const handlereUrl = "https://sayyesquickly.net/contact.php";
+
+        axios.post(handlereUrl, formData)
+            .then(res => console.log('response', res))
+            .catch(err => console.log('error', err))
+        
         console.log({
             'captcha' : captcha,
             "name": name,
