@@ -261,6 +261,9 @@ h2{
     &.Mui-focused {
         color: transparentize($beige, .7) !important;
     }
+    &.Mui-error {
+        color: $red !important;
+    }
 }
 
 .MuiInputBase-colorPrimary{
@@ -282,4 +285,21 @@ h2{
     input, textarea {
         color: $beige;
     }
+
+    &.Mui-error {
+        border: 1px solid $red;
+        &:after {
+            border-bottom-color: $red !important;
+        }
+    }
+}
+
+.MuiFormHelperText-root {
+    color: $beige !important;
+    margin: 0;
+    padding: 3px 10px 5px 10px;
+    line-height: 1;
+    background-color: $red;
+    border-bottom-left-radius: 4px;
+    border-bottom-right-radius: 4px;
 }
