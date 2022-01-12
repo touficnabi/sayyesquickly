@@ -15,7 +15,6 @@ const Contact = () => {
     const recaptcha_key = process.env.NODE_ENV === "Production" ? process.env.REACT_API_RECAPTCHA_PROD : process.env.REACT_API_RECAPTCHA_STAGE;
 
     const [ recaptcha, setRecaptcha ] = useState(null);
-    const [ errorMessage, setErrorMessage ] = useState(null);
     const [ name, setName ] = useState("");
     const [ phone, setPhone ] = useState("");
     const [ email, setEmail ] = useState("");
@@ -31,7 +30,8 @@ const Contact = () => {
 
     const formInProgressStyle = {
         opacity: '.4',
-        cursor: 'pointer'
+        cursor: 'progress',
+        pointerEvent: 'none'
     }
 
     const validateEmail = emailaddress => (emailaddress) ? emailaddress.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) : false;
@@ -64,7 +64,6 @@ const Contact = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-
         
         const formData = new FormData();
         formData.append('name', name);
@@ -77,7 +76,6 @@ const Contact = () => {
             
             const handlereUrl = "https://sayyesquickly.net/contact.php";
             
-            console.log( 'validate', validate())
             const validated = validate();
             
             if (validated) {
@@ -106,11 +104,11 @@ const Contact = () => {
                         <Row className="justify-content-center">
                             <Col lg={8}>
                                 <form className={styles.form} action="" onSubmit={handleSubmit} style={formSubmitting ? formInProgressStyle : {}}>
-                                    <TextField onChange={(e) => setName(e.target.value)} id="filled-basic" label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} />
-                                    <TextField onChange={(e) => setPhone(e.target.value)} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} />
-                                    <TextField onChange={(e) => setEmail(e.target.value)} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} />
-                                    <TextField onChange={(e) => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" />
-                                    <TextField onChange={(e) => setMessage(e.target.value)} label="Message" variant="filled" minRows={3} maxRows={7} name="message" multiline helperText={error.messageError} error={error.messageError !== ""} />
+                                    <TextField onChange={e => setName(e.target.value), e => setError({...error, nameError: ""})} id="filled-basic" label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} />
+                                    <TextField onChange={e => setPhone(e.target.value), e => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} />
+                                    <TextField onChange={e => setEmail(e.target.value), e => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} />
+                                    <TextField onChange={e => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" />
+                                    <TextField onChange={e => setMessage(e.target.value), e => setError({...error, messageError: ""})} label="Message" variant="filled" minRows={3} maxRows={7} name="message" multiline helperText={error.messageError} error={error.messageError !== ""} />
                                         <GoogleReCaptcha onVerify={(val) => setRecaptcha(val)} />
                                     <a onClick={handleSubmit} className="button solid red text-center">Submit</a>
                                 </form>
