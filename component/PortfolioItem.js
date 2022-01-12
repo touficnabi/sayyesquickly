@@ -3,7 +3,7 @@ import styles from '../styles/PortfolioItem.module.scss';
 import Image from 'next/image';
 // import Link from 'next/link';
 
-const PortfolioItem = ({reversed, book, name, image, children}) => {
+const PortfolioItem = ({reversed, book, name, image, bookUrl, children}) => {
 
     if (book){
         return(
@@ -12,6 +12,10 @@ const PortfolioItem = ({reversed, book, name, image, children}) => {
                     <Row className="justify-content-center">
                         <Col md={10}>
                             <div className={styles.wrapper}>
+
+                                <h1 className="hidden"><span itemProp="name">{name}</span></h1>
+                                <h2 className="hidden">Author: <span itemProp="author" itemScope itemType="https://schema.org/Person" itemID={bookUrl}>Russell Martin</span></h2>
+
                                 <div className={`${styles.portfolio__image} mb-5 mb-lg-0`}>
                                     <div data-name={name}>
                                         <Image src={image} alt={name} />

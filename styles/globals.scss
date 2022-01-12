@@ -38,6 +38,12 @@ body {
         background: $green;
         z-index: 99999999;
     }
+
+    .hidden {
+        display: none !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+    }
 }
 
 ::-webkit-scrollbar-thumb {
