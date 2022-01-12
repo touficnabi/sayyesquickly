@@ -29,19 +29,19 @@ export default function Nav() {
                 scrub: true,
                 end: '+=300px'
             }})
-            gsap.to(nav1.current, {x: -60, color: '#485543', scrollTrigger: {
+            gsap.fromTo(nav1.current, {x: 0, color: '#ffffeb'}, {x: -60, color: '#485543', scrollTrigger: {
                 trigger: '.very-top',
                 start: 'top top',
                 scrub: true,
                 end: '+=300px'
             }})
-            gsap.to(nav2.current, {x: 53, color: '#485543', scrollTrigger: {
+            gsap.fromTo(nav2.current, {x: 0, color: '#ffffeb'}, {x: 53, color: '#485543', scrollTrigger: {
                 trigger: '.very-top',
                 start: 'top top',
                 scrub: true,
                 end: '+=300px'
             }})
-            gsap.from(logoImg.current, { y: '-170%', scrollTrigger:{
+            gsap.fromTo(logoImg.current, {x: '-50%', y: '-170%'}, { y: 0, scrollTrigger:{
                 trigger: '.very-top',
                 start: 'top top',
                 scrub: true,

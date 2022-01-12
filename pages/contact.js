@@ -104,7 +104,7 @@ const Contact = () => {
                         <Row className="justify-content-center">
                             <Col lg={8}>
                                 <form className={styles.form} action="" onSubmit={handleSubmit} style={formSubmitting ? formInProgressStyle : {}}>
-                                    <TextField onChange={e => setName(e.target.value), e => setError({...error, nameError: ""})} id="filled-basic" label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} />
+                                    <TextField onChange={e => setName(e.target.value), e => setError({...error, nameError: ""})} label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} />
                                     <TextField onChange={e => setPhone(e.target.value), e => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} />
                                     <TextField onChange={e => setEmail(e.target.value), e => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} />
                                     <TextField onChange={e => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" />
