@@ -10,6 +10,7 @@ import Link from 'next/link';
 import { GoogleReCaptcha, GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import axios from "axios";
 import Head from 'next/head';
+import Loader from "../component/Loader";
 
 const theme = createTheme({
     palette: {
@@ -43,13 +44,7 @@ const Contact = () => {
         phoneError : "",
         emailError : "",
         messageError : ""
-    })
-
-    const formInProgressStyle = {
-        opacity: '.4',
-        cursor: 'progress',
-        pointerEvent: 'none'
-    }
+    });
 
     const validateEmail = emailaddress => (emailaddress) ? emailaddress.match(/^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/) : false;
 
@@ -124,14 +119,18 @@ const Contact = () => {
                         <Row className="justify-content-center">
                             <Col lg={8}>
                                 <ThemeProvider theme={theme}>
-                                    <form className={styles.form} action="" onSubmit={handleSubmit} style={formSubmitting ? formInProgressStyle : {}}>
+                                    <form className={styles.form} action="" onSubmit={handleSubmit}>
+                                        {formSubmitting && <div className={styles.form_progress_overlay}></div>}
                                         <TextField onChange={(e) => setName(e.target.value)} onKeyDown={() => setError({...error, nameError: ""})} label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} value={name} />
                                         <TextField onChange={(e) => setPhone(e.target.value)} onKeyDown={() => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} value={phone} />
                                         <TextField onChange={(e) => setEmail(e.target.value)} onKeyDown={() => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} value={email} />
                                         <TextField onChange={(e) => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" value={subject} />
                                         <TextField onChange={(e) => setMessage(e.target.value)} onKeyDown={() => setError({...error, messageError: ""})} label="Message" variant="filled" minRows={3} maxRows={7} name="message" multiline helperText={error.messageError} error={error.messageError !== ""} value={message} />
-                                            <GoogleReCaptcha onVerify={(val) => setRecaptcha(val)} />
-                                        <a onClick={handleSubmit} className="button solid red text-center"  >Submit</a>
+                                        <GoogleReCaptcha onVerify={(val) => setRecaptcha(val)} />
+                                        <a onClick={handleSubmit} className="button solid red text-center" style={formSubmitting ? {lineHeight: 0}:{}}>
+                                            {formSubmitting && <Loader color="#ffffeb" size={90} />}
+                                            {!formSubmitting && <span>Submit</span>}
+                                        </a>
                                     </form>
                                 </ThemeProvider>
                             </Col>
