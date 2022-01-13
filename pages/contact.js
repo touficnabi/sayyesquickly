@@ -98,9 +98,13 @@ const Contact = () => {
                 setFormSubmitting(true);
                 axios.post(handlereUrl, formData)
                     .then(res => {
-                        console.log('res', res);
                         if (res.status === 200) {
-                            setFormSubmitting(false)
+                            setFormSubmitting(false);
+                            setName("");
+                            setPhone("");
+                            setEmail("");
+                            setSubject("");
+                            setMessage("");
                         }
                     })
                     .catch(err => console.log('error', err))
@@ -121,13 +125,13 @@ const Contact = () => {
                             <Col lg={8}>
                                 <ThemeProvider theme={theme}>
                                     <form className={styles.form} action="" onSubmit={handleSubmit} style={formSubmitting ? formInProgressStyle : {}}>
-                                        <TextField onChange={(e) => setName(e.target.value)} onKeyDown={() => setError({...error, nameError: ""})} label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} />
-                                        <TextField onChange={(e) => setPhone(e.target.value)} onKeyDown={() => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} />
-                                        <TextField onChange={(e) => setEmail(e.target.value)} onKeyDown={() => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} />
-                                        <TextField onChange={(e) => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" />
-                                        <TextField onChange={(e) => setMessage(e.target.value)} onKeyDown={() => setError({...error, messageError: ""})} label="Message" variant="filled" minRows={3} maxRows={7} name="message" multiline helperText={error.messageError} error={error.messageError !== ""} />
+                                        <TextField onChange={(e) => setName(e.target.value)} onKeyDown={() => setError({...error, nameError: ""})} label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} value={name} />
+                                        <TextField onChange={(e) => setPhone(e.target.value)} onKeyDown={() => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} value={phone} />
+                                        <TextField onChange={(e) => setEmail(e.target.value)} onKeyDown={() => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} value={email} />
+                                        <TextField onChange={(e) => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" value={subject} />
+                                        <TextField onChange={(e) => setMessage(e.target.value)} onKeyDown={() => setError({...error, messageError: ""})} label="Message" variant="filled" minRows={3} maxRows={7} name="message" multiline helperText={error.messageError} error={error.messageError !== ""} value={message} />
                                             <GoogleReCaptcha onVerify={(val) => setRecaptcha(val)} />
-                                        <a onClick={handleSubmit} className="button solid red text-center">Submit</a>
+                                        <a onClick={handleSubmit} className="button solid red text-center"  >Submit</a>
                                     </form>
                                 </ThemeProvider>
                             </Col>
