@@ -2,6 +2,7 @@ import PageHero from "../component/PageHero";
 import HeroImage from '../public/img/contact-hero.jpeg';
 import styles from '../styles/Contact.module.scss';
 import { TextField } from "@mui/material";
+import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Parallax } from "react-parallax";
@@ -9,6 +10,22 @@ import Link from 'next/link';
 import { GoogleReCaptcha, GoogleReCaptchaProvider } from "react-google-recaptcha-v3";
 import axios from "axios";
 import Head from 'next/head';
+
+const theme = createTheme({
+    palette: {
+        primary: {
+            main: '#ffffeb'
+        },
+        secondary: {
+            main: '#e94b35'
+        }
+    },
+    contrastThreshold: 3,
+    tonalOffset: 0.2,
+    typography: {
+        fontFamily: 'Raleway, sans-serif'
+    },
+})
 
 const Contact = () => {
 
@@ -103,15 +120,17 @@ const Contact = () => {
                     <Container>
                         <Row className="justify-content-center">
                             <Col lg={8}>
-                                <form className={styles.form} action="" onSubmit={handleSubmit} style={formSubmitting ? formInProgressStyle : {}}>
-                                    <TextField onChange={e => setName(e.target.value), e => setError({...error, nameError: ""})} label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} />
-                                    <TextField onChange={e => setPhone(e.target.value), e => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} />
-                                    <TextField onChange={e => setEmail(e.target.value), e => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} />
-                                    <TextField onChange={e => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" />
-                                    <TextField onChange={e => setMessage(e.target.value), e => setError({...error, messageError: ""})} label="Message" variant="filled" minRows={3} maxRows={7} name="message" multiline helperText={error.messageError} error={error.messageError !== ""} />
-                                        <GoogleReCaptcha onVerify={(val) => setRecaptcha(val)} />
-                                    <a onClick={handleSubmit} className="button solid red text-center">Submit</a>
-                                </form>
+                                <ThemeProvider theme={theme}>
+                                    <form className={styles.form} action="" onSubmit={handleSubmit} style={formSubmitting ? formInProgressStyle : {}}>
+                                        <TextField onChange={e => setName(e.target.value), e => setError({...error, nameError: ""})} label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} />
+                                        <TextField onChange={e => setPhone(e.target.value), e => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} />
+                                        <TextField onChange={e => setEmail(e.target.value), e => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} />
+                                        <TextField onChange={e => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" />
+                                        <TextField onChange={e => setMessage(e.target.value), e => setError({...error, messageError: ""})} label="Message" variant="filled" minRows={3} maxRows={7} name="message" multiline helperText={error.messageError} error={error.messageError !== ""} />
+                                            <GoogleReCaptcha onVerify={(val) => setRecaptcha(val)} />
+                                        <a onClick={handleSubmit} className="button solid red text-center">Submit</a>
+                                    </form>
+                                </ThemeProvider>
                             </Col>
                         </Row>
                     </Container>

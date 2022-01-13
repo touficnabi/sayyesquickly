@@ -4,7 +4,6 @@ import Image from 'next/image';
 // import Link from 'next/link';
 
 const PortfolioItem = ({reversed, book, name, image, bookUrl, children}) => {
-
     if (book){
         return(
             <div itemScope itemType="https://schema.org/Book" className={ reversed ? `${styles.portfolio} ${styles.reversed}` : styles.portfolio} style={book? {padding: '100px 0', margin : '0'} : ''} >
@@ -18,7 +17,7 @@ const PortfolioItem = ({reversed, book, name, image, bookUrl, children}) => {
 
                                 <div className={`${styles.portfolio__image} mb-5 mb-lg-0`}>
                                     <div data-name={name}>
-                                        <Image src={image} alt={name} />
+                                        <Image itemProp="image" src={image} alt={name} />
                                     </div>
                                 </div>
                                 <div className={styles.portfolio__info}>
