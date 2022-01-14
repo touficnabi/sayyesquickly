@@ -1,5 +1,5 @@
 import gsap from "gsap";
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import { faAngleDoubleLeft, faAngleDoubleRight } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -32,10 +32,6 @@ const VSlider = () => {
             gsap.fromTo(slide1.current, {x: 500, alpha: 0, display: 'none'}, {x: 0, alpha: 1, display: 'block'})
         }
     }
-
-    useEffect(() => {
-
-    }, [])
     return(
         <>        
             <div className="slider" style={{width: '100%', paddingBottom: '50%'}}>

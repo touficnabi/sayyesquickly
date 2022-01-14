@@ -5,6 +5,7 @@ import {ScrollTrigger} from 'gsap/dist/ScrollTrigger';
 import Layout from '../component/Layout';
 import Router from 'next/router'
 import { useEffect, useRef } from 'react';
+import Loader from '../component/Loader';
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -36,7 +37,7 @@ function MyApp({ Component, pageProps }) {
 
     return(
         <>
-            <div className="loading" ref={load}></div>
+            <div className="loading" ref={load}><Loader color="#e94b35" size={100} /></div>
             <Layout>
                 <Component {...pageProps} />
             </Layout>

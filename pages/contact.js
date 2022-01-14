@@ -3,7 +3,7 @@ import HeroImage from '../public/img/contact-hero.jpeg';
 import styles from '../styles/Contact.module.scss';
 import { TextField } from "@mui/material";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Parallax } from "react-parallax";
 import Link from 'next/link';
@@ -11,6 +11,7 @@ import { GoogleReCaptcha, GoogleReCaptchaProvider } from "react-google-recaptcha
 import axios from "axios";
 import Head from 'next/head';
 import Loader from "../component/Loader";
+import gsap from "gsap";
 
 const theme = createTheme({
     palette: {
@@ -39,6 +40,7 @@ const Contact = () => {
     const [ subject, setSubject ] = useState("");
     const [ message, setMessage ] = useState("");
     const [ formSubmitting, setFormSubmitting ] = useState(false);
+    const [ formSuccess, setFormSuccess ] = useState(false);
     const [ error, setError ] = useState({
         nameError : "",
         phoneError : "",
@@ -100,12 +102,23 @@ const Contact = () => {
                             setEmail("");
                             setSubject("");
                             setMessage("");
+                            setFormSuccess(true);
                         }
                     })
                     .catch(err => console.log('error', err))
             }
         }  
     }
+
+    const thankyou = useRef(null);
+
+    useEffect(() => {
+        if (formSuccess) {
+            gsap.to(thankyou.current, {alpha: 1, display: "block", visibility: 'visible', duration: .3})
+        } else {
+            gsap.to(thankyou.current, {alpha: 0, display: "none", visibility: 'hidden', duration: .3})
+        }
+    }, [formSuccess])
 
     return (
         <GoogleReCaptchaProvider reCaptchaKey="6Ld4f_kdAAAAAJrEzYJBGn1a78S3cilBFGux5FPg">
@@ -154,6 +167,15 @@ const Contact = () => {
                         </Container>
                     </Parallax>
                 </section> 
+
+                {/* {Thank you popup} */}
+                <div ref={thankyou} className={styles.thankyou_popup} style={{display: 'none', opacity: 0, visibility: 'hidden'}}>
+                    <div className="popup_inner">
+                        <h2>Thank You!</h2>
+                        <p>Your message has been received.</p>
+                        <a className="button solid alt-green text-center" onClick={() => setFormSuccess(false)}>Close</a>
+                    </div>    
+                </div>
             </main>    
         </GoogleReCaptchaProvider> 
     )

@@ -37,6 +37,13 @@ body {
         height: 100vh;
         background: $green;
         z-index: 99999999;
+
+        .loading-bubble {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
     }
 
     .hidden {
@@ -279,22 +286,18 @@ h2{
 		box-sizing: content-box;
         border-radius: 50%;
 		&:nth-child(1) {
-			//transform: translate(22.65px,0);
 			background: #000000;
 			animation-delay: -0.4444444444444444s;
 		}
 		&:nth-child(2) {
-			//transform: translate(52.85px,0);
 			background: #000000;
 			animation-delay: -0.2962962962962963s;
 		}
 		&:nth-child(3) {
-			//transform: translate(83.05px,0);
 			background: #000000;
 			animation-delay: -0.14814814814814814s;
 		}
 		&:nth-child(4) {
-			// transform: translate(113.25px,0);
 			background: #000000;
 			animation-delay: -0.7407407407407407s;
 		}

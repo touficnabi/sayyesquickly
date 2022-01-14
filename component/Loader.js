@@ -21,7 +21,7 @@ const Loader = ({ size, color }) => {
     }
 
     return (
-        <div className="loadingio-spinner-bars-rhbsl7mk1na" style={size? {width, height} : {}}>
+        <div className="loadingio-spinner-bars-rhbsl7mk1na loading-bubble" style={size? {width, height} : {}}>
             <div className="ldio-o87y3w0la78">
                 <div style={bubbleStyle()}></div>
                 <div style={bubbleStyle()}></div>
