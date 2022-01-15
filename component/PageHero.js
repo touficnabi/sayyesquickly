@@ -2,19 +2,30 @@ import styles from '../styles/PageHero.module.scss';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
 
 const PageHero = ({text, image}) => {
 
     const bottom = useRef(null);
+    const bg = useRef(null);
 
     const scrollDown = () => {
         bottom.current.scrollIntoView({behavior: 'smooth'});
     }
 
+    useEffect(() => {
+        gsap.to(bg.current, {backgroundPositionY : 130, scrollTrigger : {
+            trigger: '.very-top',
+            start: 'top top',
+            scrub: true,
+            end: '+=380'
+        }})
+    }, [])
+
     return(
         <>
-            <div className={styles.pageHero} style={ typeof image === "object" ? {backgroundImage: `url('${image.src}')`} : {backgroundImage: `url('${image}')`}}>
+            <div ref={bg} className={styles.pageHero} style={ typeof image === "object" ? {backgroundImage: `url('${image.src}')`} : {backgroundImage: `url('${image}')`}}>
                 <Container>
                     <Row>
                         <Col md={12}>
