@@ -134,10 +134,12 @@ const Contact = () => {
                                 <ThemeProvider theme={theme}>
                                     <form className={styles.form} action="" onSubmit={handleSubmit}>
                                         {formSubmitting && <div className={styles.form_progress_overlay}></div>}
-                                        <TextField onChange={(e) => setName(e.target.value)} onKeyDown={() => setError({...error, nameError: ""})} label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} value={name} />
-                                        <TextField onChange={(e) => setPhone(e.target.value)} onKeyDown={() => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} value={phone} />
-                                        <TextField onChange={(e) => setEmail(e.target.value)} onKeyDown={() => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} value={email} />
-                                        <TextField onChange={(e) => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" value={subject} />
+                                        <div className={styles.form_fields}>
+                                            <TextField onChange={(e) => setName(e.target.value)} onKeyDown={() => setError({...error, nameError: ""})} label="Name" variant="filled" type="text" name="name" helperText={error.nameError} error={error.nameError !== ""} value={name} />
+                                            <TextField onChange={(e) => setPhone(e.target.value)} onKeyDown={() => setError({...error, phoneError: ""})} label="Phone" variant="filled" type="phone" name="phone" helperText={error.phoneError} error={error.phoneError !== ""} value={phone} />
+                                            <TextField onChange={(e) => setEmail(e.target.value)} onKeyDown={() => setError({...error, emailError: ""})} label="Email" variant="filled" type="email" name="email" helperText={error.emailError} error={error.emailError !== ""} value={email} />
+                                            <TextField onChange={(e) => setSubject(e.target.value)} label="Subject" variant="filled" type="subject" name="subject" value={subject} />
+                                        </div>
                                         <TextField onChange={(e) => setMessage(e.target.value)} onKeyDown={() => setError({...error, messageError: ""})} label="Message" variant="filled" minRows={3} maxRows={7} name="message" multiline helperText={error.messageError} error={error.messageError !== ""} value={message} />
                                         <GoogleReCaptcha onVerify={(val) => setRecaptcha(val)} />
                                         <a onClick={handleSubmit} className="button solid red text-center" style={formSubmitting ? {lineHeight: 0}:{}}>

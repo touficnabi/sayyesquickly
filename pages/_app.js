@@ -7,11 +7,11 @@ import Router from 'next/router'
 import { useEffect, useRef } from 'react';
 import Loader from '../component/Loader';
 
-gsap.registerPlugin(ScrollTrigger)
+gsap.registerPlugin(ScrollTrigger);
 
 function MyApp({ Component, pageProps }) {
     
-    const load = useRef(null)
+    const load = useRef(null);
 
     useEffect(() => {
         gsap.to(load.current, {

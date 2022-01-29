@@ -19,13 +19,13 @@ const Books = ({books}) => {
                     <PortfolioItem key={book.id} book image={book.image} name={book.acf.book_name} bookUrl={book.link}>
                         <h4 itemProp="about">{book.acf.book_tagline}</h4>
                         <span itemProp="description" dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
-                        <Link href={book.acf.buy_url}><a className="button solid">{book.acf.buy_button}</a></Link>
+                        <Link href={book.acf.buy_url}><a className="button solid" target="_blank">{book.acf.buy_button}</a></Link>
                     </PortfolioItem>
                 ) : (
                     <PortfolioItem key={book.id} book image={book.image} name={book.acf.book_name} bookUrl={book.link} reversed>
                         <h4 itemProp="about">{book.acf.book_tagline}</h4>
                         <span itemProp="description" dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
-                        <Link href={book.acf.buy_url}><a className="button solid">{book.acf.buy_button}</a></Link>
+                        <Link href={book.acf.buy_url}><a className="button solid" target="_blank">{book.acf.buy_button}</a></Link>
                     </PortfolioItem>
                 ))}
             </div>

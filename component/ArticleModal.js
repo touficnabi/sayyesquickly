@@ -29,7 +29,7 @@ const ArticleModal = ({image, title, content, author, date}) => {
                     <FontAwesomeIcon icon={faTimes} />
                 </button>
                 <div className={styles.article_image}>
-                    <Image loading="eager" src={postImage} alt={title.rendered} />
+                    <Image loading="lazy"  src={postImage} alt={title.rendered} />
                 </div>
                 <div className={styles.content}>
                     <h2 dangerouslySetInnerHTML={{__html: title.rendered}}></h2>

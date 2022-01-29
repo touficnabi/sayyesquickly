@@ -16,7 +16,7 @@ function Hero (){
             start: 'top top',
             scrub: true,
             end: '+=300px'
-        }})
+        }});
     }, [])
 
     const scrollDown = () => {
