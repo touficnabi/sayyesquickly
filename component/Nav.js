@@ -72,8 +72,8 @@ export default function Nav() {
                     <Container className="justify-content-center">
                         <ul ref={nav1} className={`${Styles.main_nav} ${Styles.nav_1}`}>
                             <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/">Home</Link></li>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/who-we-are">Who We Are</Link></li>
                             <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/russell-martin">Russell Martin</Link></li>
+                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/who-we-are">Coaching</Link></li>
                         </ul>
                         <Link href="/" passHref={true}><div ref={logoImg} className={`${Styles.logo} logo`}><Image src={Logo} alt="Say Yes Quickly Logo" styles={{borderBottomRightRadius: '4px', borderBottomLeftRadius: '4px'}} /></div></Link>
                         {/* <img ref={logoImg} src="img/logo.jpeg" alt="Say Yes Quickly Logo" className={`${Styles.logo} logo`} /> */}
