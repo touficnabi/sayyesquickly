@@ -29,13 +29,13 @@ export default function Nav() {
                 scrub: true,
                 end: '+=300px'
             }})
-            gsap.fromTo(nav1.current, {x: 0, color: '#ffffeb'}, {x: -60, color: '#485543', scrollTrigger: {
+            gsap.fromTo(nav1.current, {x: 0, color: '#ffffeb'}, {x: -50, color: '#485543', scrollTrigger: {
                 trigger: '.very-top',
                 start: 'top top',
                 scrub: true,
                 end: '+=300px'
             }})
-            gsap.fromTo(nav2.current, {x: 0, color: '#ffffeb'}, {x: 53, color: '#485543', scrollTrigger: {
+            gsap.fromTo(nav2.current, {x: 0, color: '#ffffeb'}, {x: 64, color: '#485543', scrollTrigger: {
                 trigger: '.very-top',
                 start: 'top top',
                 scrub: true,
