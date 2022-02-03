@@ -13,7 +13,22 @@ import BookIcon from '../public/img/book-icon.png';
 import FilmIcon from '../public/img/film-icon.png'
 import VSlider from '../component/VSlider';
 
+import { useRouter } from 'next/router';
+import { useEffect } from 'react';
+
 export default function Home({posts}) {
+
+    con
+
+    const router = useRouter();
+    const refreshData = () => {
+        router.replace(router.asPath);
+    }
+
+    useEffect(() => {
+        refreshData()
+     }, [posts]);
+
     return (
         <>
             <Head>
