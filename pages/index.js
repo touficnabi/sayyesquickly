@@ -18,8 +18,6 @@ import { useEffect } from 'react';
 
 export default function Home({posts}) {
 
-    con
-
     const router = useRouter();
     const refreshData = () => {
         router.replace(router.asPath);
