@@ -13,19 +13,21 @@ import BookIcon from '../public/img/book-icon.png';
 import FilmIcon from '../public/img/film-icon.png'
 import VSlider from '../component/VSlider';
 
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+// import { useRouter } from 'next/router';
+// import { useEffect } from 'react';
 
 export default function Home({posts}) {
 
-    const router = useRouter();
-    const refreshData = () => {
-        router.replace(router.asPath);
-    }
+    console.log(posts)
 
-    useEffect(() => {
-        refreshData()
-     }, [posts]);
+    // const router = useRouter();
+    // const refreshData = () => {
+    //     router.replace(router.asPath);
+    // }
+
+    // useEffect(() => {
+    //     refreshData()
+    //  }, [posts]);
 
     return (
         <>
@@ -163,11 +165,20 @@ export default function Home({posts}) {
     )
 }
 
-export const getStaticProps = async () => {
+// export const getStaticProps = async () => {
+//     const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/posts?_embed');
+//     const posts = await query.json();
+
+//     return {
+//         props: {posts}
+//     }
+// }
+
+Home.getInitialProps = async (ctx) => {
     const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/posts?_embed');
     const posts = await query.json();
 
     return {
-        props: {posts}
+        posts
     }
 }
