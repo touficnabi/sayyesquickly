@@ -33,7 +33,7 @@ const Books = ({books}) => {
     )
 }
 
-export const getServerSideProps = async (context) => {
+export const getStaticProps = async (context) => {
     // const client = new ApolloClient({
     //     uri: 'http://cms.sayyesquickly.net/graphql',
     //     cache: new InMemoryCache()
