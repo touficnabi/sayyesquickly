@@ -40,7 +40,7 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
                         </Container>
                     </section>
     
-                    <section>
+                    {/* <section>
                         <PortfolioItem image={filmImg}>
                             <h4 dangerouslySetInnerHTML={{__html: film.acf.film_tagline}}></h4>
                             <span dangerouslySetInnerHTML={{__html: film.content.rendered}}></span>
@@ -51,6 +51,52 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
                             <span dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
                             <Link href="/news"><a className="button solid">Read More</a></Link>
                         </PortfolioItem>
+                    </section> */}
+
+                    <section className={`no-padding ${styles.coaching_info}`}>
+                        <Container fluid={"lg"}>
+                            <Row>   
+                                <Col lg={4} className={styles.column}>
+                                    <Container className="px-0">
+                                        <Row>
+                                            <h5>How Do You Get from Great Idea to Published Book or Article? Russell Martin knows exactly how, and he would be pleased to show you the way.</h5>
+                                            <p>
+                                                Life is too short to simply wish you were the author you&apos;ve always known you can be. Or maybe you&apos;re fine with letting that particular dream go, yet isn&apos;t there more to life than fine? Did you dream of being “fine” when you were young, filled with hope and excitement about what the future held? Absolutely not.
+                                                <br/><br/>
+                                                You were meant to tell stories and to share your ideas with others. Telling stories is one of the most satisfying experiences a person can have. But how do you go about it?
+                                            </p>
+                                        </Row>
+                                    </Container>
+                                    
+                                </Col>
+                                <Col lg={4} className={styles.column}>
+                                    <Container className="px-0">
+                                        <Row>
+                                            <h5>You can follow one of two paths. You can continue to dream about becoming a published writer. Or you can choose a second path and stop trying to figure this out all by yourself. Instead, follow the lead of someone whose writing and publishing skills and experience are unparalleled.</h5>
+                                            <p>
+                                                Life is too short to simply wish you were the author you&apos;ve always known you can be. Or maybe you&apos;re fine with letting that particular dream go, yet isn&apos;t there more to life than fine? Did you dream of being “fine” when you were young, filled with hope and excitement about what the future held? Absolutely not.
+                                                <br/><br/>
+                                                You were meant to tell stories and to share your ideas with others. Telling stories is one of the most satisfying experiences a person can have. But how do you go about it?
+                                            </p>
+                                        </Row>
+                                    </Container>
+                                </Col>
+                                <Col lg={4} className={styles.column}>
+                                    <Container className="px-0">
+                                        <Row>
+                                            <h3>Become a published Author</h3>
+                                            <p>
+                                                With a Coach, a Writing Partner, and a Publishing Pro by Your Side, You Can Do it!
+                                                <br/><br/>
+                                                This third bit of text goes in the box with white border and white type.
+                                                <br/><br/>
+                                                The button at the bottom of that box reads: learn more at Russell Martin coaching and links to <a href="https://russellmartincoaching.com" rel="noreferrer noopener" target="_blank">https://russellmartincoaching.com</a>, opening in a new window.
+                                            </p>
+                                        </Row>
+                                    </Container>
+                                </Col>
+                            </Row>
+                        </Container>
                     </section>
     
                     <section className={`${styles.russell} no-padding`}>

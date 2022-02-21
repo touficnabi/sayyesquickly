@@ -33,7 +33,7 @@ const news = ({news}) => {
 }
 
 export const getStaticProps = async () => {
-    const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/news?_embed&filter[orderby]=date&order=asc');
+    const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/news?_embed&filter[orderby]=date&order=desc');
     const news = await query.json();
 
     return {

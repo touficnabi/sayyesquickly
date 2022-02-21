@@ -4,7 +4,7 @@ import PageHero from '../component/PageHero';
 import PortfolioItem from '../component/PortfolioItem';
 import HeroImage from '../public/img/books-hero.jpeg';
 import styles from '../styles/Books.module.scss'
-import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+// import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
 const Books = ({books}) => {
     return(

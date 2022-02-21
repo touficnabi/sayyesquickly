@@ -25,9 +25,10 @@ function Hero (){
 
     return(
         <section className={Styles.hero}>
-            <span ref={heroLogo} style={{display: 'flex'}}>
+            <span ref={heroLogo} style={{display: 'flex', flexDirection: 'column'}}>
                 <Image src={Logo} alt="Say Yes Quickly" />
             </span>
+            <h3>Russell martin, author, filmmaker, publishing coach</h3>
             <a className={Styles.scrollToBelowHero} onClick={scrollDown} ref={heroLogo}>
                 <FontAwesomeIcon icon={faAngleDoubleDown} />
             </a>

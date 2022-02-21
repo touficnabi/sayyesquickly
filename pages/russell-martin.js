@@ -49,8 +49,8 @@ const RussellMartin = ({pageContent, headshot, loaded}) => {
                         <Container>
                             <Row>
                                 <Col className={styles.buttons}>
-                                    <Link href="/"><a className="button solid">Books by Russell Martin</a></Link>
-                                    <Link href="/"><a className="button solid">Films by Russell Martin</a></Link>
+                                    <Link href="/books"><a className="button solid">Books by Russell Martin</a></Link>
+                                    <Link href="/films"><a className="button solid">Films by Russell Martin</a></Link>
                                 </Col>
                             </Row>
                         </Container>

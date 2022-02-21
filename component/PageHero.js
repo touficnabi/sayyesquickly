@@ -29,7 +29,7 @@ const PageHero = ({text, image}) => {
                 <Container>
                     <Row>
                         <Col md={12}>
-                            <h1 className="title">{text}</h1>
+                            <h1 className="title" dangerouslySetInnerHTML={{__html: text}} />
                         </Col>
                     </Row>
                 </Container>
