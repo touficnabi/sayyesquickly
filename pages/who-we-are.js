@@ -7,6 +7,7 @@ import { Parallax } from "react-parallax";
 import Link from "next/link";
 
 const WhoWeAre = ({loaded, pageContent, film, book}) => {
+    
     const bookImg = {
         src : book.better_featured_image.source_url,
         width: book.better_featured_image.media_details.width,
@@ -21,7 +22,9 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
         return (
             <>
                 <Head>
-                    <title>{pageContent.title.rendered} – Say Yes Quickly</title>
+                    {/* <title dangerouslySetInnerHTML={{__html: pageContent.title.rendered}} /> */}
+                    {/* <title>{pageContent.title.rendered} – Say Yes Quickly</title> */}
+                    <title>&amp; – Say Yes Quickly</title>
                     <meta name="description" content="This is the index or home page of the Say Yes Quickly Productions website." />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
@@ -59,41 +62,30 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
                                 <Col lg={4} className={styles.column}>
                                     <Container className="px-0">
                                         <Row>
-                                            <h5>How Do You Get from Great Idea to Published Book or Article? Russell Martin knows exactly how, and he would be pleased to show you the way.</h5>
-                                            <p>
-                                                Life is too short to simply wish you were the author you&apos;ve always known you can be. Or maybe you&apos;re fine with letting that particular dream go, yet isn&apos;t there more to life than fine? Did you dream of being “fine” when you were young, filled with hope and excitement about what the future held? Absolutely not.
-                                                <br/><br/>
-                                                You were meant to tell stories and to share your ideas with others. Telling stories is one of the most satisfying experiences a person can have. But how do you go about it?
-                                            </p>
+                                            <h5>{pageContent.acf.info_heading_1}</h5>
+                                            <p dangerouslySetInnerHTML={{ __html: pageContent.acf.info_description_1 }} />
                                         </Row>
                                     </Container>
                                     
                                 </Col>
-                                <Col lg={4} className={styles.column}>
+                                <Col lg={8} className={styles.column}>
                                     <Container className="px-0">
                                         <Row>
-                                            <h5>You can follow one of two paths. You can continue to dream about becoming a published writer. Or you can choose a second path and stop trying to figure this out all by yourself. Instead, follow the lead of someone whose writing and publishing skills and experience are unparalleled.</h5>
-                                            <p>
-                                                Life is too short to simply wish you were the author you&apos;ve always known you can be. Or maybe you&apos;re fine with letting that particular dream go, yet isn&apos;t there more to life than fine? Did you dream of being “fine” when you were young, filled with hope and excitement about what the future held? Absolutely not.
-                                                <br/><br/>
-                                                You were meant to tell stories and to share your ideas with others. Telling stories is one of the most satisfying experiences a person can have. But how do you go about it?
-                                            </p>
+                                            <h5>{pageContent.acf.info_heading_2}</h5>
+                                            <p dangerouslySetInnerHTML={{__html: pageContent.acf.info_description_2}} />
                                         </Row>
                                     </Container>
                                 </Col>
-                                <Col lg={4} className={styles.column}>
-                                    <Container className="px-0">
-                                        <Row>
-                                            <h3>Become a published Author</h3>
-                                            <p>
-                                                With a Coach, a Writing Partner, and a Publishing Pro by Your Side, You Can Do it!
-                                                <br/><br/>
-                                                This third bit of text goes in the box with white border and white type.
-                                                <br/><br/>
-                                                The button at the bottom of that box reads: learn more at Russell Martin coaching and links to <a href="https://russellmartincoaching.com" rel="noreferrer noopener" target="_blank">https://russellmartincoaching.com</a>, opening in a new window.
-                                            </p>
-                                        </Row>
-                                    </Container>
+                            </Row>
+                        </Container>
+                    </section>
+                    <section className={'red-bg'}>
+                        <Container>
+                            <Row className="justify-content-lg-center">
+                                <Col lg={7} className={'text-center'} >
+                                    <h3>{pageContent.acf.info_heading_3}</h3>
+                                    <p dangerouslySetInnerHTML={{__html: pageContent.acf.info_description_3}} />
+                                    <a className="button transparent mt-5" href="https://russellmartincoaching.com/">{pageContent.acf.info_cta_button}</a>
                                 </Col>
                             </Row>
                         </Container>

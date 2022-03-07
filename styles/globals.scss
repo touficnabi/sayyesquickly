@@ -2,6 +2,11 @@
 @import '_variables.scss';
 @import '_reset.scss';
 
+::selection {
+    background-color: $red;
+    color: $beige;
+}
+
 html,
 body {
     padding: 0;
@@ -151,6 +156,10 @@ section, .section{
     &.no-padding{
         padding-top: 0;
         padding-bottom: 0;
+    }
+
+    &.red-bg{
+        background-color: $red;
     }
 
     .react-parallax {
