@@ -86,7 +86,7 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
                                 <Col lg={7} className={'text-center'} >
                                     <h3>{pageContent.acf.info_heading_3}</h3>
                                     <p dangerouslySetInnerHTML={{__html: pageContent.acf.info_description_3}} />
-                                    <a className="button transparent mt-5" href="https://russellmartincoaching.com/">{pageContent.acf.info_cta_button}</a>
+                                    <a className="button transparent mt-5" href="https://russellmartincoaching.com/" rel="noopener noreferrer" target="_blank">{pageContent.acf.info_cta_button}</a>
                                 </Col>
                             </Row>
                         </Container>
