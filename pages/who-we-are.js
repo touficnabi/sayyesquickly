@@ -4,6 +4,7 @@ import { Container, Row, Col } from "react-bootstrap";
 import styles from '../styles/WhoWeAre.module.scss';
 import PortfolioItem from "../component/PortfolioItem";
 import { Parallax } from "react-parallax";
+import renderHTML from 'react-render-html';
 import Link from "next/link";
 
 const WhoWeAre = ({loaded, pageContent, film, book}) => {
@@ -24,7 +25,7 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
                 <Head>
                     {/* <title dangerouslySetInnerHTML={{__html: pageContent.title.rendered}} /> */}
                     {/* <title>{pageContent.title.rendered} – Say Yes Quickly</title> */}
-                    <title>&amp; – Say Yes Quickly</title>
+                    <title>{renderHTML(pageContent.title.rendered)} – Say Yes Quickly</title>
                     <meta name="description" content="This is the index or home page of the Say Yes Quickly Productions website." />
                     <link rel="icon" href="/favicon.ico" />
                 </Head>
