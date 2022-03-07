@@ -131,7 +131,8 @@ export const getStaticProps = async () => {
             film, 
             book,
             loaded: true
-        }
+        },
+        revalidate: 10
     }
 }
 
