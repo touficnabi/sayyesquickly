@@ -25,7 +25,7 @@ const ArticleModal = ({image, title, content, author, date}) => {
             <a className={`button transparent`} onClick={handleShow}>Read Article</a>
 
             <Modal show={show} onHide={handleClose} className={styles.modal}>
-                <button className={styles.close} onClick={handleClose}>
+                <button aria-label='Close Modal' className={styles.close} onClick={handleClose}>
                     <FontAwesomeIcon icon={faTimes} />
                 </button>
                 <div className={styles.article_image}>

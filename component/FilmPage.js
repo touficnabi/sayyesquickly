@@ -15,7 +15,7 @@ const FilmPage = ({film, image, filmID}) => {
                         <Row>
                             <Col lg={12}>
                                 <div style={{padding:'56.25% 0 0 0',position:'relative', marginBottom: '-0%'}}>
-                                    <iframe src={`https://player.vimeo.com/video/${filmID}?color=e94b35&title=0&byline=0&portrait=0`} style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
+                                    <iframe title={`Watch ${film}`} src={`https://player.vimeo.com/video/${filmID}?color=e94b35&title=0&byline=0&portrait=0`} style={{position:'absolute',top:0,left:0,width:'100%',height:'100%'}} frameBorder="0" allow="autoplay; fullscreen; picture-in-picture" allowFullScreen></iframe>
                                 </div>
                             </Col>
                         </Row>
