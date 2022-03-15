@@ -90,7 +90,8 @@ export const getStaticProps = async () => {
             pageContent, 
             headshot,
             "loaded" : true
-        }
+        },
+        revalidate: 10
     }
 }
 

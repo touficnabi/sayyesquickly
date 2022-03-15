@@ -37,7 +37,8 @@ export const getStaticProps = async () => {
     const news = await query.json();
 
     return {
-        props: {news}
+        props: {news},
+        revalidate: 10
     }
 }
 
