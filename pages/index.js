@@ -60,7 +60,7 @@ export default function Home({posts}) {
                             <Col lg={5} md={10}>
                                 <h1 className={styles.russell_name}>Russell Martin</h1>
                                 <p className={styles.russell_about}>Russell Martin directed, wrote, and produced the highly acclaimed and award-winning documentary Beautiful Faces, filmed in Mexico City, which premiered in 2012. He is a producer and co-writer of the award-winning documentary film Two Spirits and an award-winning, internationally published author of two critically acclaimed novels, The Sorrow of Archaeology and Beautiful Islands, as well as many nonfiction books. He has written for Time, the New York Times, New York Times Magazine, and National Public Radio.</p>
-                                <Link href="/"><a className="button solid">Read More</a></Link>
+                                <Link href="/russell-martin"><a className="button solid">Read about Russell Martin</a></Link>
                             </Col>
                             <Col lg={5} md={10} className="mt-5 mt-lg-0">
                                 <div className="flex-center" style={{position: "relative", display: 'block'}}><Image loading="lazy" placeholder="blur" src={Russell} alt="Russell Martin" /></div>
@@ -102,7 +102,7 @@ export default function Home({posts}) {
                                         <div><Image src={BookIcon} alt="books by Russell Martin" /></div>
                                         <h2 className="title mt-4">Books</h2>
                                         <p>For more than thirty years, Russell Martin has published novels and nonfiction books that have been widely acclaimed in the United States and around the world—books noted for their analysis, discipline, vivid storytelling, and poetic sensibilities.</p>
-                                        <Link href="/books"><a className="button transparent mt-5">Read More</a></Link>
+                                        <Link href="/books"><a className="button transparent mt-5">View Books</a></Link>
                                     </div>
                                 </div>
                             </Col>
@@ -113,7 +113,7 @@ export default function Home({posts}) {
                                         <div><Image src={FilmIcon} alt="Films by Russell Martin" /></div>
                                         <h2 className="title mt-4">Films</h2>
                                         <p>Russell Martin’s award-winning documentary films have been screened at film festivals and broadcast on television in numerous countries around the world—films that educate, inspire, and move viewers to action.</p>
-                                        <Link href="/films"><a className="button transparent mt-5">Read More</a></Link>
+                                        <Link href="/films"><a className="button transparent mt-5">View Films</a></Link>
                                     </div>
                                 </div>
                             </Col>
@@ -129,7 +129,7 @@ export default function Home({posts}) {
                                     <div className={styles.name_box}>
                                         <div className="flex-center"><Image src={Logo} alt="Say Yes Quickly Logo" width={114} height={114} /></div>
                                         <p className="text-center">The name “Say Yes Quickly” comes from a poem by Jelaluddin Rumi, the great Sufi mystic who lived in the thirteenth century. The poem affirms that it’s possible to touch the lives of “people you don’t know and have never seen.” And we love to say yes quickly ourselves when we&apos;re entertained, moved, or impassioned by the creative work of others.<br /><br />Russell and his colleagues at Say Yes Quickly can be reached by telephone at<br />+1 818 601 4800 or by e-mail at russell [AT] sayyesquickly.net</p>
-                                        <div className="flex-center"><Link href="/russell-martin"><a className="button solid mt-5">Read More</a></Link></div>
+                                        <div className="flex-center"><Link href="/russell-martin"><a className="button solid mt-5">Read About Russell Martin</a></Link></div>
                                     </div>
                                 </Col>
                             </Row>

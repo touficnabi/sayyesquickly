@@ -20,7 +20,7 @@ const Films = ({films}) => {
                         <h4>{film.acf.film_tagline}</h4>
                         <span dangerouslySetInnerHTML={{__html: film.content.rendered}}></span>
                         <div className="button_container" style={{display: 'flex', gap: '20px', flexWrap: 'wrap'}}>
-                            <Link href={film.acf.view_url}><a className="button solid">{film.acf.view_button}</a></Link>
+                            <Link href={`films${film.acf.view_url}`}><a className="button solid">{film.acf.view_button}</a></Link>
                             <Link href={film.acf.film_website_url}><a className="button transparent">{film.acf.film_website}</a></Link>
                         </div>
                     </PortfolioItem>
@@ -28,8 +28,10 @@ const Films = ({films}) => {
                     <PortfolioItem key={film.id} book image={film.image} name={film.acf.film_name} reversed>
                         <h4>{film.acf.film_tagline}</h4>
                         <span dangerouslySetInnerHTML={{__html: film.content.rendered}}></span>
-                        <Link href={film.acf.view_url}><a className="button solid">{film.acf.view_button}</a></Link>
-                        <Link href={film.acf.film_website_url}><a className="button solid">{film.acf.film_website}</a></Link>
+                        <div className="button_container" style={{display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'flex-end'}}>
+                            <Link href={`films${film.acf.view_url}`}><a className="button solid">{film.acf.view_button}</a></Link>
+                            <Link href={film.acf.film_website_url}><a className="button transparent">{film.acf.film_website}</a></Link>
+                        </div>
                     </PortfolioItem>
                 ))}
             </div>

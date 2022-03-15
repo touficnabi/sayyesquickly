@@ -73,7 +73,7 @@ const Articles = ({id, posts}) => {
                             </Row>
                         </Col>
                         <div className={styles.center_btn}>
-                            <Link href='/news'><a className="button solid">Read More</a></Link>
+                            <Link href='/news'><a className="button solid">Read News</a></Link>
                         </div>
                     </Row>
                 </Container>
