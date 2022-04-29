@@ -3,8 +3,7 @@ import Link from 'next/link';
 import PageHero from '../component/PageHero';
 import PortfolioItem from '../component/PortfolioItem';
 import HeroImage from '../public/img/books-hero.jpeg';
-import styles from '../styles/Books.module.scss'
-// import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
+import styles from '../styles/Books.module.scss';
 
 const Books = ({books}) => {
     return(
@@ -34,40 +33,6 @@ const Books = ({books}) => {
 }
 
 export const getStaticProps = async (context) => {
-    // const client = new ApolloClient({
-    //     uri: 'http://cms.sayyesquickly.net/graphql',
-    //     cache: new InMemoryCache()
-    // })
-
-    // const res = await client.query({
-    //     query: gql`
-    //         query MyQuery {
-    //             books {
-    //                 edges {
-    //                     node {
-    //                         id
-    //                         bookId
-    //                         content(format: RENDERED)
-    //                         title
-    //                         featuredImage {
-    //                             node {
-    //                                 id
-    //                                 authorId
-    //                                 altText
-    //                                 sourceUrl(size: LARGE)
-    //                                 srcSet
-    //                                 uri
-    //                             }
-    //                         }
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     `
-    // })
-
-    // const books = res.data.books.edges.map(({node}) => node);
-
     const res = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/book?_embed&filter[orderby]=date&order=asc')
     const items = await res.json();
 
@@ -80,9 +45,7 @@ export const getStaticProps = async (context) => {
     })
 
     return {
-        props: {
-            books
-        },
+        props: { books },
         revalidate: 10,
     }
 }

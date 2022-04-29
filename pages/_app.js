@@ -17,8 +17,16 @@ function MyApp({ Component, pageProps }) {
         gsap.to(load.current, {
             alpha: 0, 
             display: "none",
-            duration: .5
+            duration: .5,
+            delay: .5
         })
+        setTimeout(() => {
+            window.scroll({
+                top: 0,
+                left: 0,
+                behavior: 'auto'
+            })
+        }, 100)
         Router.events.on('routeChangeStart', (url) => {
             gsap.to(load.current, {
                 alpha: 1, 
@@ -30,8 +38,17 @@ function MyApp({ Component, pageProps }) {
             gsap.to(load.current, {
                 alpha: 0, 
                 display: "none",
-                duration: .5
+                duration: .5,
+                delay: 1
             })
+            // setTimeout(() => window.scrollTo(0, 0), 0);  
+            setTimeout(() => {
+                window.scroll({
+                    top: 0,
+                    left: 0,
+                    behavior: 'auto'
+                })
+            }, 100)
         })
     }, [])
 

@@ -81,12 +81,13 @@ export default function Nav() {
                             <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/news">News</Link></li>
                             <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/books">Books</Link></li>
                             <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/films">Films</Link></li>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/#home-article">Articles</Link></li>
+                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/contact">Contact</Link></li>
+                            {/* <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/#home-article">Articles</Link></li> */}
                         </ul>
                     </Container>
                 </Navbar>
             </header>
-            <span className={Styles.nav_contact} ref={contact}><Link href="/contact">Contact</Link></span>
+            {/* <span className={Styles.nav_contact} ref={contact}><Link href="/contact">Contact</Link></span> */}
         </>
     )
 }

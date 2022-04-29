@@ -5,6 +5,11 @@
 ::selection {
     background-color: $red;
     color: $beige;
+
+    .red-bg & {
+        background-color: $beige;
+        color: $red;
+    }
 }
 
 html,
@@ -30,7 +35,12 @@ body {
         font-size: 1.3rem /*1.878rem*/; 
         line-height: 1.6; 
         color: $beige; 
-        letter-spacing: 2px;
+        letter-spacing: 2px; 
+        p{
+            font-size: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+        }
         @include mobile-only {
             font-size: 1rem;
         }
