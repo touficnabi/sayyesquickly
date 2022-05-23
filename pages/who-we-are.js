@@ -44,6 +44,18 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
                             </Row>
                         </Container>
                     </section>
+                    <section>
+                        <Container>
+                            <Row className="justify-content-center">
+                                <Col lg={9}>
+                                    <h5 className="text-center">
+                                        {/* Russell Martin and his colleagues bring many years of experience to their work in print, television, and film. Beautiful Faces is a &quot;splendid documentary&quot; according to Reforma, Mexico&apos;s leading newspaper. The documentary film Two Spirits was broadcast during the 2010-2011 season of the PBS series &quot;Independent Lens,&quot; and won the season&apos;s Audience Award. Russell Martin&apos;s bestselling book projects--including Beethoven&apos;s Hair, Picasso&apos;s War, and Out of Silence--have been translated into dozens of languages throughout the world. */}
+                                        {renderHTML(pageContent.acf.info_heading_2)}
+                                    </h5>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </section>
     
                     {/* <section>
                         <PortfolioItem image={filmImg}>
@@ -58,7 +70,7 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
                         </PortfolioItem>
                     </section> */}
 
-                    <section className={`no-padding ${styles.coaching_info}`}>
+                    {/* <section className={`no-padding ${styles.coaching_info}`}>
                         <Container fluid={"lg"}>
                             <Row>   
                                 <Col lg={4} className={styles.column}>
@@ -80,7 +92,7 @@ const WhoWeAre = ({loaded, pageContent, film, book}) => {
                                 </Col>
                             </Row>
                         </Container>
-                    </section>
+                    </section> */}
                     <section className={'red-bg'}>
                         <Container>
                             <Row className="justify-content-lg-center">

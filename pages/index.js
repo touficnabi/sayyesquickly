@@ -13,8 +13,8 @@ import BookIcon from '../public/img/book-icon.png';
 import FilmIcon from '../public/img/film-icon.png'
 import VSlider from '../component/VSlider';
 
-export default function Home({posts}) {
-
+export default function Home({homepageData, posts, russell_imageData}) {
+    console.log(homepageData);
     return (
         <>
             <Head>
@@ -24,7 +24,7 @@ export default function Home({posts}) {
             </Head>
 
             <main className={styles.main}>
-                <Hero />
+                <Hero homepageData={homepageData} />
                 <section className={styles.about}>
                     <Container>
                         <Row className="justify-content-center">
@@ -32,14 +32,14 @@ export default function Home({posts}) {
                             <Col lg={8} md={12}>
                                 <Row>
                                     <Col lg={6} className={styles.has_right_border}>
-                                        <p>Our lives are made of stories told over countless cups of coffee, broadcast and projected onto screens, passed hand-to-hand on the printed page, and whispered in bed. We all eagerly listen to the stories of others and relish telling our own. In their simplicity and grandeur, humor and drama, stories occupy the very heart of what it means to be human.</p>
+                                        <p>{homepageData.acf.about_syq_homepage_left}</p>
                                     </Col>
                                     <Col lg={6}>
-                                        <p>Russell Martin and his colleagues at Say Yes Quickly create imaginative, character-based stories for film, television, print, and new media—stories that get people talking, true stories that reflect the complexities of individual lives and imagined stories that mine essential elements of our shared humanity.</p>
+                                        <p>{homepageData.acf.about_syq_homepage_right}</p>
                                     </Col>
                                 </Row>
                                 <div className="center_items">
-                                    <Link href="/russell-martin"><a className="button solid alt-green">Russell Martin</a></Link> 
+                                    <Link href={homepageData.acf.home_about_button_link}><a className="button solid alt-green">{homepageData.acf.home_about_button_text}</a></Link> 
                                 </div>
                             </Col>
                         </Row>
@@ -58,9 +58,9 @@ export default function Home({posts}) {
                     <Container>
                         <Row className="justify-content-center align-items-center">
                             <Col lg={5} md={10}>
-                                <h1 className={styles.russell_name}>Russell Martin</h1>
-                                <p className={styles.russell_about}>Russell Martin directed, wrote, and produced the highly acclaimed and award-winning documentary Beautiful Faces, filmed in Mexico City, which premiered in 2012. He is a producer and co-writer of the award-winning documentary film Two Spirits and an award-winning, internationally published author of two critically acclaimed novels, The Sorrow of Archaeology and Beautiful Islands, as well as many nonfiction books. He has written for Time, the New York Times, New York Times Magazine, and National Public Radio.</p>
-                                <Link href="/russell-martin"><a className="button solid">Read about Russell Martin</a></Link>
+                                <h1 className={styles.russell_name}>{homepageData.acf.russell_martin.heading}</h1>
+                                <p className={styles.russell_about}>{homepageData.acf.russell_martin.description}</p>
+                                <Link href={homepageData.acf.homepage_russell_button.button_link}><a className="button solid">{homepageData.acf.homepage_russell_button.button_text}</a></Link>
                             </Col>
                             <Col lg={5} md={10} className="mt-5 mt-lg-0">
                                 <div className="flex-center" style={{position: "relative", display: 'block'}}><Image loading="lazy" placeholder="blur" src={Russell} alt="Russell Martin" /></div>
@@ -112,7 +112,7 @@ export default function Home({posts}) {
                                         {/* <img src="/img/film-icon.png" alt="Films by Russell Martin" /> */}
                                         <div><Image src={FilmIcon} alt="Films by Russell Martin" /></div>
                                         <h2 className="title mt-4">Films</h2>
-                                        <p>Russell Martin’s award-winning documentary films have been screened at film festivals and broadcast on television in numerous countries around the world—films that educate, inspire, and move viewers to action.</p>
+                                        <p>Russell Martin&apos;s award-winning documentary films have been screened at film festivals and broadcast on television in numerous countries around the world—films that educate, inspire, and move viewers to action.</p>
                                         <Link href="/films"><a className="button transparent mt-5">View Films</a></Link>
                                     </div>
                                 </div>
@@ -162,10 +162,16 @@ export default function Home({posts}) {
 
 Home.getInitialProps = async (ctx) => {
     const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/posts?_embed');
+    const homepage = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/pages/257');
     const posts = await query.json();
+    const homepageData = await homepage.json();
+    const russell_image = await fetch(`https://cms.sayyesquickly.net/wp-json/wp/v2/media/${homepageData.acf.russell_image}`)
+    const russell_imageData = await russell_image.json();
 
     return {
+        homepageData,
         posts,
+        russell_imageData,
         revalidate: 10,
     }
 }

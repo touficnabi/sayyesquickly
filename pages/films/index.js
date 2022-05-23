@@ -7,6 +7,7 @@ import styles from '../../styles/Books.module.scss'
 import { ApolloClient, gql, InMemoryCache } from '@apollo/client';
 
 const Films = ({films}) => {
+    console.log(films);
     return(
         <main>
             <Head>
