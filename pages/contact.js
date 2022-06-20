@@ -12,6 +12,7 @@ import axios from "axios";
 import Head from 'next/head';
 import Loader from "../component/Loader";
 import gsap from "gsap";
+import renderHTML from "react-render-html";
 
 const theme = createTheme({
     palette: {
@@ -29,7 +30,7 @@ const theme = createTheme({
     },
 })
 
-const Contact = () => {
+const Contact = ({content}) => {
 
     const recaptcha_key = process.env.NODE_ENV === "Production" ? process.env.REACT_API_RECAPTCHA_PROD : process.env.REACT_API_RECAPTCHA_STAGE;
 
@@ -159,7 +160,7 @@ const Contact = () => {
                             <Row className="justify-content-center">
                                 <Col md={9}>
                                     <div className={styles.russell_box}>
-                                        <h5 className="text-center">Russell Martin is known for synthesizing the historic and contemporary elements of filmed and written stories, grounding narrative in careful research, and making complex ideas readily comprehensible and deeply humane.</h5>
+                                        <h5 className="text-center">{renderHTML(content.content.rendered)}</h5>
                                         <div className="flex-center">
                                             <Link href="/news"><a className="button solid mt-4">News</a></Link>
                                         </div>
@@ -181,6 +182,18 @@ const Contact = () => {
             </main>    
         </GoogleReCaptchaProvider> 
     )
+}
+
+export const getStaticProps = async () => {
+    const res = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/pages/314');
+    const content = await res.json();
+
+    return {
+        props: {
+            content
+        },
+        revalidate: 10
+    }
 }
 
 export default Contact;

@@ -14,6 +14,16 @@ function MyApp({ Component, pageProps }) {
     const load = useRef(null);
 
     useEffect(() => {
+
+        //ADDING CLASS TO ALL SECTIONS WITH RED BACKGROUND
+        const sections = [...document.querySelectorAll('.section, section, div')];
+        sections.forEach(section => {
+            const bgColor = window.getComputedStyle(section).getPropertyValue('background-color');
+            if (bgColor === 'rgb(233, 75, 53)') {
+                section.classList.add('red-bg');
+            }
+        });
+
         gsap.to(load.current, {
             alpha: 0, 
             display: "none",
