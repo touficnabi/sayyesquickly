@@ -93,6 +93,20 @@ a{
         text-decoration: underline;
         opacity: .6;
     }
+
+    .button & {
+        background-color: $red;
+        color: $beige;
+        padding: 13px 45px;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-decoration: none;
+
+        &:hover {
+            color: $beige;
+        }
+    }
   
     &.button{
         background-color: $red ;
