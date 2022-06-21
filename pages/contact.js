@@ -32,6 +32,8 @@ const theme = createTheme({
 
 const Contact = ({content}) => {
 
+    console.log(content);
+
     const recaptcha_key = process.env.NODE_ENV === "Production" ? process.env.REACT_API_RECAPTCHA_PROD : process.env.REACT_API_RECAPTCHA_STAGE;
 
     const [ recaptcha, setRecaptcha ] = useState(null);
@@ -88,7 +90,7 @@ const Contact = ({content}) => {
         
         if (recaptcha) {
             
-            const handlereUrl = "https://sayyesquickly.net/contact.php";
+            const handlereUrl = "https://cms.sayyesquickly.net/syq-contact.php";
             
             const validated = validate();
             
@@ -127,7 +129,7 @@ const Contact = ({content}) => {
                 <title>Contact Russell Martin - SayYesQuickly</title>
             </Head>
             <main>
-                <PageHero text="Contact" image={HeroImage} /> 
+                <PageHero text={content.title.rendered} image={content.better_featured_image.source_url} /> 
                 <section className={styles.contact_form}>
                     <Container>
                         <Row className="justify-content-center">
