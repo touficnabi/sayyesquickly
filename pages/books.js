@@ -33,7 +33,7 @@ const Books = ({books}) => {
 }
 
 export const getStaticProps = async (context) => {
-    const res = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/book?_embed&filter[orderby]=date&order=asc')
+    const res = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/book?_embed&filter[orderby]=date&order=asc&per_page=100')
     const items = await res.json();
 
     const books = items.map(book => {
