@@ -9,7 +9,7 @@ const Layout = ({children}) => {
     return (
         <div className="layout">
             <Nav />
-                {children}
+            {children}
             <Footer />
         </div>
     )

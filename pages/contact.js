@@ -32,8 +32,6 @@ const theme = createTheme({
 
 const Contact = ({content}) => {
 
-    console.log(content);
-
     const recaptcha_key = process.env.NODE_ENV === "Production" ? process.env.REACT_API_RECAPTCHA_PROD : process.env.REACT_API_RECAPTCHA_STAGE;
 
     const [ recaptcha, setRecaptcha ] = useState(null);

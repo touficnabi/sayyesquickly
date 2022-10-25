@@ -15,7 +15,6 @@ import FilmIcon from '../public/img/film-icon.png'
 import VSlider from '../component/VSlider';
 
 export default function Home({homepageData, posts, russell_imageData}) {
-    console.log(homepageData);
     return (
         <>
             <Head>
