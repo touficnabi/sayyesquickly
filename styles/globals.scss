@@ -65,10 +65,18 @@ body {
         }
     }
 
+    .uppercase {
+        text-transform: uppercase;
+    }
+
     .hidden {
         display: none !important;
         opacity: 0 !important;
         visibility: hidden !important;
+    }
+
+    .text-5xl {
+        font-size: 5rem;
     }
 }
 
@@ -285,21 +293,14 @@ h2{
 }
 
 .slider {
-    // display: flex;
-    // align-items: center;
-    // justify-content: flex-start;
     position: relative;
-    // overflow: hidden;
     .slide{
         position: absolute;
         width: 100%;
         height: 100%;
-        // display: none;
-        // opacity: 0;
 
         &:last-of-type{
             opacity: 0;
-            // position: absolute;
         }
     }
 }

@@ -28,8 +28,7 @@ function Hero ({homepageData}){
             <span ref={heroLogo} style={{display: 'flex', flexDirection: 'column'}}>
                 <Image src={Logo} alt="Say Yes Quickly" />
             </span>
-            {/* <h3>Russell Martin<br/>Author, Filmmaker, Publishing Coach</h3> */}
-            <div className={Styles.hero_text} dangerouslySetInnerHTML={{__html: homepageData.acf.hero_text}} />
+            <div className={Styles.hero_text} dangerouslySetInnerHTML={homepageData && {__html: homepageData.acf.hero_text}} />
             <a className={Styles.scrollToBelowHero} onClick={scrollDown} ref={heroLogo}>
                 <FontAwesomeIcon icon={faAngleDoubleDown} />
             </a>
