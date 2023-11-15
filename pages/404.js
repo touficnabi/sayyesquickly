@@ -3,7 +3,6 @@ import renderHTML from 'react-render-html';
 import { Container, Row, Col } from 'react-bootstrap';
 
 const Custom404 = ({pageContent}) => {
-    console.log('tofi', pageContent);
     return (
         <>
             <Head>

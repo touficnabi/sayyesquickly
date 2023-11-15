@@ -1,35 +1,39 @@
 import Head from 'next/head';
 import Link from 'next/link';
+import MissingContent from '../component/MissingContent';
 import PageHero from '../component/PageHero';
 import PortfolioItem from '../component/PortfolioItem';
 import HeroImage from '../public/img/books-hero.jpeg';
 import styles from '../styles/Books.module.scss';
 
 const Books = ({books}) => {
-    return(
-        <main>
-            <Head>
-                <title>Books by Russell Martin</title>
-            </Head>
-            <PageHero text="Books" image={HeroImage} />
-            <div className={styles.books}>
-
-                {books.map((book, index) => index % 2 ==0 ? (
-                    <PortfolioItem key={book.id} book image={book.image} name={book.acf.book_name} bookUrl={book.link}>
-                        <h4 itemProp="about">{book.acf.book_tagline}</h4>
-                        <span itemProp="description" dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
-                        <Link href={book.acf.buy_url}><a className="button solid" target="_blank">{book.acf.buy_button}</a></Link>
-                    </PortfolioItem>
-                ) : (
-                    <PortfolioItem key={book.id} book image={book.image} name={book.acf.book_name} bookUrl={book.link} reversed>
-                        <h4 itemProp="about">{book.acf.book_tagline}</h4>
-                        <span itemProp="description" dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
-                        <Link href={book.acf.buy_url}><a className="button solid" target="_blank">{book.acf.buy_button}</a></Link>
-                    </PortfolioItem>
-                ))}
-            </div>
-        </main>
-    )
+    if (books === null) {
+        return(
+            <main>
+                <Head>
+                    <title>Books by Russell Martin</title>
+                </Head>
+                <PageHero text="Books" image={HeroImage} />
+                <div className={styles.books}>
+    
+                    {books.map((book, index) => index % 2 ==0 ? (
+                        <PortfolioItem key={book.id} book image={book.image} name={book.acf.book_name} bookUrl={book.link}>
+                            <h4 itemProp="about">{book.acf.book_tagline}</h4>
+                            <span itemProp="description" dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
+                            <Link href={book.acf.buy_url}><a className="button solid" target="_blank">{book.acf.buy_button}</a></Link>
+                        </PortfolioItem>
+                    ) : (
+                        <PortfolioItem key={book.id} book image={book.image} name={book.acf.book_name} bookUrl={book.link} reversed>
+                            <h4 itemProp="about">{book.acf.book_tagline}</h4>
+                            <span itemProp="description" dangerouslySetInnerHTML={{__html: book.content.rendered}}></span>
+                            <Link href={book.acf.buy_url}><a className="button solid" target="_blank">{book.acf.buy_button}</a></Link>
+                        </PortfolioItem>
+                    ))}
+                </div>
+            </main>
+        )
+    }
+    return <MissingContent title="Books by Russell Martin" />
 }
 
 export const getStaticProps = async (context) => {
