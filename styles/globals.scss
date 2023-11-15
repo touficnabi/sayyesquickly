@@ -2,6 +2,16 @@
 @import '_variables.scss';
 @import '_reset.scss';
 
+::selection {
+    background-color: $red;
+    color: $beige;
+
+    .red-bg & {
+        background-color: $beige;
+        color: $red;
+    }
+}
+
 html,
 body {
     padding: 0;
@@ -25,10 +35,19 @@ body {
         font-size: 1.3rem /*1.878rem*/; 
         line-height: 1.6; 
         color: $beige; 
-        letter-spacing: 2px;
+        letter-spacing: 2px; 
+        p{
+            font-size: inherit;
+            line-height: inherit;
+            letter-spacing: inherit;
+        }
         @include mobile-only {
             font-size: 1rem;
         }
+    }
+
+    em {
+        font-style: italic;
     }
 
     .loading {
@@ -46,10 +65,18 @@ body {
         }
     }
 
+    .uppercase {
+        text-transform: uppercase;
+    }
+
     .hidden {
         display: none !important;
         opacity: 0 !important;
         visibility: hidden !important;
+    }
+
+    .text-5xl {
+        font-size: 5rem;
     }
 }
 
@@ -73,6 +100,20 @@ a{
     &:hover{
         text-decoration: underline;
         opacity: .6;
+    }
+
+    .button & {
+        background-color: $red;
+        color: $beige;
+        padding: 13px 45px;
+        text-transform: uppercase;
+        font-size: 13px;
+        letter-spacing: 2px;
+        text-decoration: none;
+
+        &:hover {
+            color: $beige;
+        }
     }
   
     &.button{
@@ -151,6 +192,10 @@ section, .section{
     &.no-padding{
         padding-top: 0;
         padding-bottom: 0;
+    }
+
+    &.red-bg{
+        background-color: $red;
     }
 
     .react-parallax {
@@ -248,21 +293,14 @@ h2{
 }
 
 .slider {
-    // display: flex;
-    // align-items: center;
-    // justify-content: flex-start;
     position: relative;
-    // overflow: hidden;
     .slide{
         position: absolute;
         width: 100%;
         height: 100%;
-        // display: none;
-        // opacity: 0;
 
         &:last-of-type{
             opacity: 0;
-            // position: absolute;
         }
     }
 }

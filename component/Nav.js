@@ -10,18 +10,23 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
-export default function Nav() {
+const Nav = () => {
     const logoImg = useRef(null);
     const nav1 = useRef(null);
     const nav2 = useRef(null);
     const navbar = useRef(null);
-    const contact = useRef(null)
-
+    const contact = useRef(null);
+    
+    const [menus, setMenus] = useState([]);
+    
     const [mobileNavIsOpen, setMobileNavIsOpen] = useState(false)
-
+    
     const isMobile = useMediaQuery({ query: `(max-width: 990px)` });
-
+    
     useEffect(() => {
+
+        fetch('https://cms.sayyesquickly.net/wp-json/custom/menu/3').then(res => res.json()).then(resp => setMenus(resp));
+
         if (!isMobile){
             gsap.to(navbar.current, {backgroundColor: '#ffffeb', scrollTrigger: {
                 trigger: '.very-top',
@@ -71,22 +76,37 @@ export default function Nav() {
                 <Navbar ref={navbar} className={ !mobileNavIsOpen ? `${Styles.navbar} p-0` : `${Styles.navbar} p-0 ${Styles.mobile_open}`}>
                     <Container className="justify-content-center">
                         <ul ref={nav1} className={`${Styles.main_nav} ${Styles.nav_1}`}>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/">Home</Link></li>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/russell-martin">Russell Martin</Link></li>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/who-we-are">Coaching</Link></li>
+                            {menus ? (
+                                menus.slice(0,3).map(menu => (<li key={menu.ID} className={Styles.nav_item} onClick={mobile_nav_open}><Link href={menu.url}>{menu.title}</Link></li>))
+                            ) : (
+                                <>
+                                    <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/">Home</Link></li>
+                                    <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/russell-martin">Russell Martin</Link></li>
+                                    <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/who-we-are">Coaching</Link></li>
+                                </>
+                            )}
                         </ul>
                         <Link href="/" passHref={true}><div ref={logoImg} className={`${Styles.logo} logo`}><Image src={Logo} alt="Say Yes Quickly Logo" styles={{borderBottomRightRadius: '4px', borderBottomLeftRadius: '4px'}} /></div></Link>
                         {/* <img ref={logoImg} src="img/logo.jpeg" alt="Say Yes Quickly Logo" className={`${Styles.logo} logo`} /> */}
                         <ul ref={nav2} className={`${Styles.main_nav} ${Styles.nav_2}`}>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/news">News</Link></li>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/books">Books</Link></li>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/films">Films</Link></li>
-                            <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/#home-article">Articles</Link></li>
+                            {menus ? (
+                                menus.slice(-4).map(menu => (<li key={menu.ID} className={Styles.nav_item} onClick={mobile_nav_open}><Link href={menu.url}>{menu.title}</Link></li>))
+                            ) : (
+                                <>
+                                    <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/news">News</Link></li>
+                                    <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/books">Books</Link></li>
+                                    <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/films">Films</Link></li>
+                                    <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/contact">Contact</Link></li>
+                                </>
+                            )}
+                            {/* <li className={Styles.nav_item} onClick={mobile_nav_open}><Link href="/#home-article">Articles</Link></li> */}
                         </ul>
                     </Container>
                 </Navbar>
             </header>
-            <span className={Styles.nav_contact} ref={contact}><Link href="/contact">Contact</Link></span>
+            {/* <span className={Styles.nav_contact} ref={contact}><Link href="/contact">Contact</Link></span> */}
         </>
     )
 }
+
+export default Nav;

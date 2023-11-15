@@ -33,11 +33,12 @@ const news = ({news}) => {
 }
 
 export const getStaticProps = async () => {
-    const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/news?_embed&filter[orderby]=date&order=asc');
+    const query = await fetch('https://cms.sayyesquickly.net/wp-json/wp/v2/news?_embed&filter[orderby]=date&order=desc&per_page=100');
     const news = await query.json();
 
     return {
-        props: {news}
+        props: {news},
+        revalidate: 10
     }
 }
 

@@ -6,7 +6,7 @@ import Logo from '../public/img/logo.jpeg';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
 
-function Hero (){
+function Hero ({homepageData}){
     const heroLogo = useRef(null);
     const bottom = useRef(null)
     
@@ -25,9 +25,10 @@ function Hero (){
 
     return(
         <section className={Styles.hero}>
-            <span ref={heroLogo} style={{display: 'flex'}}>
+            <span ref={heroLogo} style={{display: 'flex', flexDirection: 'column'}}>
                 <Image src={Logo} alt="Say Yes Quickly" />
             </span>
+            <div className={Styles.hero_text} dangerouslySetInnerHTML={homepageData && {__html: homepageData.acf.hero_text}} />
             <a className={Styles.scrollToBelowHero} onClick={scrollDown} ref={heroLogo}>
                 <FontAwesomeIcon icon={faAngleDoubleDown} />
             </a>

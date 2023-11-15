@@ -9,7 +9,7 @@
             flex-direction: column;
         }
     
-        span{
+        span.russell_img{
             position: relative;
             flex-basis: 45%;
             display: inline-flex;
@@ -26,11 +26,11 @@
 
             @include desktop-only {
                 margin-right: 4rem;
-                > div {
+                > span {
                     display: flex !important;
                     width: 100%;
     
-                    > div {
+                    > span {
                         width: 100%;
     
                         >img {

@@ -141,7 +141,13 @@
             @include mobile-only { font-size: .85em;}
             line-height: 1.5;
             margin-top: 40px;
+            
+            a {
+                color: inherit;
+                text-decoration: underline;
+            }
         }
+
 
         a{
             margin-bottom: -22.5px;

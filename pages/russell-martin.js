@@ -29,17 +29,8 @@ const RussellMartin = ({pageContent, headshot, loaded}) => {
                             <Row className="justify-content-center">
                                 <Col md={10}>
                                     <div className={styles.about_russell}>
-                                        <span data-name="Russell Martin"><Image src={russell_headshot} alt="Russell Martin" /></span>
+                                        <span className={styles.russell_img} data-name="Russell Martin"><Image src={russell_headshot} alt="Russell Martin" /></span>
                                         <div className={styles.about_russell_russell_description} dangerouslySetInnerHTML={{__html: pageContent.content.rendered}}></div>
-                                        {/* <p>
-                                            Russell Martin directed, wrote, and produced the highly acclaimed and award-winning documentary Beautiful Faces, filmed in Mexico City, which premiered in 2012. He is a producer and co-writer of the award-winning documentary film Two Spirits and an award-winning, internationally published author of two critically acclaimed novels, The Sorrow of Archaeology and Beautiful Islands, as well as many nonfiction books. He has written for Time, the New York Times, New York Times Magazine, and National Public Radio.
-                                            <br/><br/>
-                                            His nonfiction book Beethoven&apos;s Hair, a United States bestseller and a Washington Post Book of the Year, has been published in twenty-one translated editions and is the subject of a Gemini-award-winning film of the same name. His books have been optioned by Robert Redford&apos;s Wildwood Enterprises, the Denver Center Theatre Company, and New World Television. He is, says Kirkus Reviews, &quot;first and foremost a masterful storyteller.&quot;
-                                            <br/><br/>
-                                            His highly acclaimed book, Picasso&apos;s War, has been published in seven international editions; Out of Silence, was named by the Bloomsbury Review as one of fifteen best books of its first fifteen years of publication, and  A Story That Stands Like A Dam: Glen Canyon and the Struggle for the Soul of the West, won the Caroline Bancroft History Prize.
-                                            <br/><br/>
-                                            When he was awarded an honorary doctorate by Colorado College in 1995, the citation read, in part, &quot;Mr. Martin offers to general audiences precise and accurate, but highly readable, studies of extraordinarily complex issues. He does more: he sees beyond what is already known; he moves beyond synthesis to new insights. His work is disciplined, analytical, and creative. It is also profoundly humane.&qout;
-                                        </p> */}
                                     </div>
                                 </Col>
                             </Row>
@@ -49,8 +40,8 @@ const RussellMartin = ({pageContent, headshot, loaded}) => {
                         <Container>
                             <Row>
                                 <Col className={styles.buttons}>
-                                    <Link href="/"><a className="button solid">Books by Russell Martin</a></Link>
-                                    <Link href="/"><a className="button solid">Films by Russell Martin</a></Link>
+                                    <Link href="/books"><a className="button solid">Books by Russell Martin</a></Link>
+                                    <Link href="/films"><a className="button solid">Films by Russell Martin</a></Link>
                                 </Col>
                             </Row>
                         </Container>
@@ -90,7 +81,8 @@ export const getStaticProps = async () => {
             pageContent, 
             headshot,
             "loaded" : true
-        }
+        },
+        revalidate: 10
     }
 }
 

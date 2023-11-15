@@ -1,9 +1,9 @@
-import styles from '../styles/PageHero.module.scss';
+import { useEffect, useRef } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faAngleDoubleDown } from '@fortawesome/free-solid-svg-icons';
-import { useEffect, useRef } from 'react';
 import gsap from 'gsap';
+import styles from '../styles/PageHero.module.scss';
 
 const PageHero = ({text, image}) => {
 
@@ -29,7 +29,7 @@ const PageHero = ({text, image}) => {
                 <Container>
                     <Row>
                         <Col md={12}>
-                            <h1 className="title">{text}</h1>
+                            <h1 className="title" dangerouslySetInnerHTML={{__html: text}} />
                         </Col>
                     </Row>
                 </Container>

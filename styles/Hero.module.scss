@@ -9,13 +9,23 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
+
+    .hero_text {
+        text-align: center;
+        text-transform: uppercase;
+        margin-top: 30px;
+        h2 {
+            text-transform: initial;
+        }
+    }
 
     &::before{
         content: "";
         position: absolute;
         width: 100%;
         height: 100%;
-        background-color: transparentize($black, .7);
+        // background-color: transparentize($black, .7);
         z-index: -1;
     }
 
