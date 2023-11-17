@@ -7,7 +7,7 @@ import HeroImage from '../public/img/books-hero.jpeg';
 import styles from '../styles/Books.module.scss';
 
 const Books = ({books}) => {
-    if (books) {
+    if (books === null) {
         return(
             <main>
                 <Head>
